@@ -31,4 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+
+}); window.addEventListener('scroll', () => {
+    const section = document.querySelector('#producao-detalhe');
+    const scrollPos = window.scrollY + 250;
+
+    if (section && scrollPos > section.offsetTop) {
+        document.body.style.backgroundColor = "#000814"; // Escurece na produção
+    } else {
+        document.body.style.backgroundColor = "#011628"; // Cor original do Hero
+    }
+}); 
