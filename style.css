@@ -305,4 +305,46 @@ h1 { font-size: 2.5rem; margin: 20px 0; }
     .tooltip-whatsapp {
         display: none; /* Esconde o texto no celular para não atrapalhar */
     }
-}  
+
+}  /* Animação do Carrossel de Depoimentos */
+.testimonials-wrapper {
+    overflow: hidden;
+    padding: 40px 0;
+    position: relative;
+    width: 100%;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 20px;
+    animation: scrollTrack 40s linear infinite;
+    width: calc(320px * 12); /* Ajuste conforme o número de cards */
+}
+
+.testimonials-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollTrack {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-320px * 6)); }
+}
+
+/* Melhoria nos Cards de Produção */
+.banner-item {
+    border: 1px solid rgba(1, 212, 255, 0.1) !important;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a) !important;
+    backdrop-filter: blur(5px);
+}
+
+.banner-item:hover {
+    border-color: var(--cyan) !important;
+    box-shadow: 0 0 25px rgba(1, 212, 255, 0.2) !important;
+}
+
+/* Estilo do Card da Sede */
+.sede-card {
+    background: #000 !important;
+    border: 1px solid var(--cyan) !important;
+    position: relative;
+}
