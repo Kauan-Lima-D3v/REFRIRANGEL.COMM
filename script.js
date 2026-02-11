@@ -1,22 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
+    const video = document.querySelector('.loader-video');
 
-    // 1. Controle do Loader (Tela de Carregamento)
-    // O tempo de 1.8 segundos é ideal para mostrar a marca sem irritar o cliente
+    // 1. Garantir que o vídeo do loader comece a tocar
+    if (video) {
+        video.play().catch(error => {
+            console.log("Autoplay bloqueado pelo navegador, aguardando interação.");
+        });
+    }
+
+    // 2. Controle do Loader (Tela de Carregamento)
+    // Tempo de 1.8s para exibição da marca
     setTimeout(() => {
-        // Efeito de sumiço suave (Fade out)
-        loader.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s ease';
-        loader.style.opacity = '0';
-        loader.style.transform = 'scale(1.05)'; // Leve zoom ao sair para dar profundidade
-        
-        // Remove do HTML após a animação para não atrapalhar os cliques
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 800);
+        if (loader) {
+            loader.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s ease';
+            loader.style.opacity = '0';
+            loader.style.transform = 'scale(1.05)';
+            
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 800);
+        }
     }, 1800);
 
-    // 2. Scroll Suave para links internos (Âncoras)
-    // Isso faz o botão "Ver Nossa Produção" deslizar elegantemente até a seção
+    // 3. Scroll Suave para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -31,5 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
 
-}); 
+// 4. Efeito de troca de cor de fundo ao scroll
+window.addEventListener('scroll', () => {
+    const section = document.querySelector('#producao-detalhe');
+    if (section) {
+        const sectionPos = section.getBoundingClientRect().top;
+        // Se a seção de produção chegar perto do topo da tela
+        if (sectionPos < 300) {
+            document.body.style.backgroundColor = "#000814"; // Escurece
+            document.body.style.transition = "background-color 0.8s ease";
+        } else {
+            document.body.style.backgroundColor = "#011628"; // Cor original
+        }
+    }
+});
