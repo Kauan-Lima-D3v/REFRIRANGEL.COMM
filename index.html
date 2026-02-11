@@ -12,47 +12,6 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     <span class="tooltip-whatsapp">Fale com a gente!</span>
 </a>
- <style>
-        /* Ajuste do Loader para suportar o vídeo no fundo */
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .loader-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            object-fit: cover;
-            opacity: 0.5;
-        }
-
-        .loader-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-    </style>
-<body>
- <div id="loader"> 
-        <video autoplay muted loop playsinline class="loader-video">
-            <source src="Video.mp4" type="video/mp4">
-        </video>
     <div id="loader">
         <div class="loader-content">
             <h1 class="logo-load">REFRI<span>RANGEL</span></h1>
@@ -226,6 +185,7 @@
 </body>
 
 </html>
+
 
 
 
