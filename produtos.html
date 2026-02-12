@@ -3,27 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showroom Virtual | Refri Gel</title>
+    <title>Showroom Virtual | Refri Rangel</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        .lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
-        .lightbox.active { display: flex; }
-        .lightbox img { max-width: 90%; max-height: 80%; border: 3px solid #fff; border-radius: 8px; transition: transform 0.3s; }
-        .close-lightbox { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10001; }
-        
-        /* Estilos das Setas */
-        .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 50px; font-weight: bold; cursor: pointer; padding: 20px; user-select: none; transition: color 0.3s; z-index: 10000; }
-        .nav-arrow:hover { color: var(--cyan, #00f7ff); }
-        .prev-arrow { left: 10px; }
-        .next-arrow { right: 10px; }
-
-        .cta-final { background: #001529; color: white; padding: 60px 20px; text-align: center; margin-top: 50px; border-radius: 20px 20px 0 0; }
-        .cta-final h2 { font-size: 2.2rem; margin-bottom: 15px; }
-        .cta-final p { opacity: 0.8; margin-bottom: 30px; font-size: 1.1rem; }
-        .btn-grande { background: #25d366; color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 900; font-size: 1.2rem; display: inline-block; transition: transform 0.3s; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
-        .btn-grande:hover { transform: scale(1.05); }
-    </style>
 </head>
 <body class="page-products">
 
@@ -31,156 +13,112 @@
         <div class="loader-content">
             <h1 class="logo-load">REFRI<span>RANGEL</span></h1>
             <div class="progress-bar"><div class="progress-fill"></div></div>
-            <p>CARREGANDO PRODUTOS !....</p>
+            <p>CARREGANDO SHOWROOM...</p>
         </div>
     </div>
 
-    <div class="lightbox" id="lightbox">
-        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-        <span class="nav-arrow prev-arrow" onclick="changeImg(-1)">&#10094;</span>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
         <img src="" id="lightbox-img">
-        <span class="nav-arrow next-arrow" onclick="changeImg(1)">&#10095;</span>
     </div>
 
     <header>
         <nav class="container">
-            <div class="logo">REFRI<span>GEL</span></div>
+            <div class="logo">REFRI<span>RANGEL</span></div>
             <div class="nav-links">
-                <a href="index.html" class="link-p">Voltar ao Início</a>
-                <a href="https://wa.me/5511999999999" class="btn-nav">FAZER ORÇAMENTO</a>
+                <a href="index.html">Início</a>
+                <a href="https://wa.me/551140282982" class="btn-nav">ORÇAMENTO VIA WHATSAPP</a>
             </div>
         </nav>
     </header>
 
     <main class="container section-padding">
-        <div class="catalog-header" style="text-align: center; margin-bottom: 50px;">
-            <span class="tag">QUALIDADE EM CADA DETALHE...</span>
-            <h1 style="font-size: 2.5rem; margin: 15px 0;">Nossa Linha de Balcões</h1>
-            <p style="color: var(--gray); max-width: 600px; margin: 0 auto;">Selecione o equipamento ideal para o seu negócio e garanta condições exclusivas de fábrica.</p>
+        <div class="catalog-header">
+            <span class="tag">Qualidade Industrial</span>
+            <h1>Nosso Showroom</h1>
+            <p>Explore nossa linha completa de equipamentos em aço inox.</p>
         </div>
 
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-img-wrapper" style="position: relative; overflow: hidden;">
-                    <a href="javascript:void(0)" onclick="openImg('img26dona.jpeg')"><img src="img26dona.jpeg" alt="Balcão Refri Gel"></a>
-                    <div class="product-badge" style="position: absolute; top: 15px; right: 15px; background: #ffc300; color: #000; padding: 5px 12px; border-radius: 8px; font-weight: 900; font-size: 0.7rem;">Top Vendas</div>
-                </div>
-                <div class="p-info">
-                    <h3>Balcão POP</h3>
-                    <p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Aço Inox 430, isolamento em poliuretano e prateleiras reguláveis.</p>
-                    <span style="display: block; font-weight: bold; margin-bottom: 15px;">Garantia de 1 Ano</span>
-                    <a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a>
-                </div>
+        <div class="controls-container">
+            <div class="search-wrapper">
+                <input type="text" id="productSearch" placeholder="O que você procura? (Ex: Balcão 2000)">
+                <span class="search-icon">🔍</span>
             </div>
 
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <a href="javascript:void(0)" onclick="openImg('img09 (1).jpeg')"><img src="img09 (1).jpeg" alt="Vitrine Elegance"></a>
-                </div>
-                <div class="p-info">
-                    <h3>Geladeira 06 Portas</h3>
-                    <p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p>
-                    <span style="display: block; font-weight: bold; margin-bottom: 15px;">Sob Medida</span>
-                    <a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a>
-                </div>
-            </div>
-
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (2).jpeg')"><img src="img09 (2).jpeg"></a></div><div class="p-info"><h3>Balção POP 1250</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !.</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (3).jpeg')"><img src="img09 (3).jpeg"></a></div><div class="p-info"><h3>Balção POP 1000</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (4).jpeg')"><img src="img09 (4).jpeg"></a></div><div class="p-info"><h3>Vitrine Seca 2000</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (5).jpeg')"><img src="img09 (5).jpeg"></a></div><div class="p-info"><h3>Balção POP 1500</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (6).jpeg')"><img src="img09 (6).jpeg"></a></div><div class="p-info"><h3>Vitirne Refirgerada</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !.</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (7).jpeg')"><img src="img09 (7).jpeg"></a></div><div class="p-info"><h3>Vitrine Seca 1000</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (8).jpeg')"><img src="img09 (8).jpeg"></a></div><div class="p-info"><h3>Vittrine Seca 1500</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (25).jpeg')"><img src="img09 (25).jpeg"></a></div><div class="p-info"><h3>Balcão POP 2000</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (10).jpeg')"><img src="img09 (10).jpeg"></a></div><div class="p-info"><h3>Balcão caixa 600</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (24).jpeg')"><img src="img09 (24).jpeg"></a></div><div class="p-info"><h3>Balcão Pop 1800</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (21).jpeg')"><img src="img09 (21).jpeg"></a></div><div class="p-info"><h3>Balcão Encosto c/ Cuba 2000</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (12).jpeg')"><img src="img09 (12).jpeg"></a></div><div class="p-info"><h3>Balcão caixa 1000 </h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (19).jpeg')"><img src="img09 (19).jpeg"></a></div><div class="p-info"><h3>Vitrine Seca 1250</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !.</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (14).jpeg')"><img src="img09 (14).jpeg"></a></div><div class="p-info"><h3>Balcão Caixa 1000</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (15).jpeg')"><img src="img09 (15).jpeg"></a></div><div class="p-info"><h3>Balcão Caixa 800</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-            <div class="product-card"><div class="product-img-wrapper"><a href="javascript:void(0)" onclick="openImg('img09 (22).jpeg')"><img src="img09 (22).jpeg"></a></div><div class="p-info"><h3>Balcão Encosto c/ Cuba 1800</h3><p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p><a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a></div></div>
-
-            <div class="product-card">
-                <div class="product-img-wrapper" style="position: relative; overflow: hidden;">
-                    <a href="javascript:void(0)" onclick="openImg('img09 (23).jpeg')"><img src="img09 (23).jpeg" alt="Ilha de Congelados"></a>
-                    <div class="product-badge" style="position: absolute; top: 15px; right: 15px; background: #00f7ff; color: #000; padding: 5px 12px; border-radius: 8px; font-weight: 900; font-size: 0.7rem;">Lançamento</div>
-                </div>
-                <div class="p-info">
-                    <h3>Encosto 1500</h3>
-                    <p style="font-size: 0.9rem; color: var(--gray); margin: 10px 0;">Veja o Produto com mais detalhe clicando na IMG !</p>
-                    <span style="display: block; font-weight: bold; margin-bottom: 15px;">Garantia de Fábrica</span>
-                    <a href="https://wa.me/5511999999999" class="btn-buy">Garanta o Seu Agora</a>
-                </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterProducts('todos')">Todos</button>
+                <button class="filter-btn" onclick="filterProducts('balcoes')">Balcões</button>
+                <button class="filter-btn" onclick="filterProducts('vitrines')">Vitrines</button>
+                <button class="filter-btn" onclick="filterProducts('encostos')">Encostos/Pias</button>
+                <button class="filter-btn" onclick="filterProducts('caixas')">Caixas</button>
             </div>
         </div>
 
-        <section id="orcamento" class="cta-final">
-            <div class="container">
-                <h2>Gostou de algum equipamento?</h2>
-                <p>Não perca tempo! Nossos estoques são limitados e os preços de fábrica podem sofrer alteração. Clique abaixo e fale direto com um especialista agora.</p>
-                <a href="https://wa.me/5511999999999?text=Olá! Estava vendo os Produtos e gostaria de um orçamento." class="btn-grande">SOLICITAR ORÇAMENTO VIA WHATSAPP</a>
+        <div class="product-grid" id="product-grid">
+            
+            <div class="product-card" data-category="balcoes">
+                <div class="img-wrapper" onclick="openLightbox('img26dona.jpeg')">
+                    <img src="img26dona.jpeg" alt="Balcão POP">
+                    <div class="zoom-overlay">🔍 Ampliar</div>
+                </div>
+                <div class="p-info">
+                    <h3>Balcão Refrigerado POP</h3>
+                    <p>Inox 430 com isolamento térmico premium.</p>
+                    <a href="https://wa.me/551140282982?text=Orçamento: Balcão POP" class="btn-buy">CONSULTAR PREÇO</a>
+                </div>
             </div>
-        </section>
+
+            <div class="product-card" data-category="balcoes">
+                <div class="img-wrapper" onclick="openLightbox('img09 (2).jpeg')">
+                    <img src="img09 (2).jpeg" alt="Balcão POP 1250">
+                </div>
+                <div class="p-info">
+                    <h3>Balcão POP 1250</h3>
+                    <p>Alta durabilidade e baixo consumo de energia.</p>
+                    <a href="https://wa.me/551140282982?text=Orçamento: Balcão 1250" class="btn-buy">CONSULTAR PREÇO</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="vitrines">
+                <div class="img-wrapper" onclick="openLightbox('img09 (4).jpeg')">
+                    <img src="img09 (4).jpeg" alt="Vitrine Seca 2000">
+                </div>
+                <div class="p-info">
+                    <h3>Vitrine Seca 2000</h3>
+                    <p>Vidro temperado e acabamento fino em inox.</p>
+                    <a href="https://wa.me/551140282982?text=Orçamento: Vitrine 2000" class="btn-buy">CONSULTAR PREÇO</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="encostos">
+                <div class="img-wrapper" onclick="openLightbox('img09 (21).jpeg')">
+                    <img src="img09 (21).jpeg" alt="Encosto Cuba">
+                </div>
+                <div class="p-info">
+                    <h3>Encosto com Cuba 2000</h3>
+                    <p>Mesa de trabalho com pia integrada em Inox.</p>
+                    <a href="https://wa.me/551140282982?text=Orçamento: Encosto Cuba" class="btn-buy">CONSULTAR PREÇO</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="caixas">
+                <div class="img-wrapper" onclick="openLightbox('img09 (10).jpeg')">
+                    <img src="img09 (10).jpeg" alt="Caixa 600">
+                </div>
+                <div class="p-info">
+                    <h3>Balcão Caixa 600</h3>
+                    <p>Design ergonômico para frente de caixa.</p>
+                    <a href="https://wa.me/551140282982?text=Orçamento: Caixa 600" class="btn-buy">CONSULTAR PREÇO</a>
+                </div>
+            </div>
+
+            </div>
     </main>
 
     <footer class="modern-footer">
-        <div class="container footer-copy">
-            <p>&copy; 2026 Refri RANGel - 16 Anos de História.</p>
-        </div>
+        <p>&copy; 2026 Refri Rangel - 16 Anos de História.</p>
     </footer>
 
-    <script>
-        const images = Array.from(document.querySelectorAll('.product-img-wrapper img')).map(img => img.getAttribute('src'));
-        let currentIndex = 0;
-
-        function openImg(url) {
-            currentIndex = images.indexOf(url);
-            updateLightbox();
-            document.getElementById('lightbox').classList.add('active');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
-        function changeImg(direction) {
-            // Se clicar para avançar (1) e estiver na última imagem
-            if (direction === 1 && currentIndex === images.length - 1) {
-                closeLightbox();
-                document.getElementById('orcamento').scrollIntoView({ behavior: 'smooth' });
-                return;
-            }
-            
-            currentIndex += direction;
-            if (currentIndex >= images.length) currentIndex = 0;
-            if (currentIndex < 0) currentIndex = images.length - 1;
-            updateLightbox();
-        }
-
-        function updateLightbox() {
-            const lbImg = document.getElementById('lightbox-img');
-            lbImg.style.opacity = '0';
-            setTimeout(() => {
-                lbImg.src = images[currentIndex];
-                lbImg.style.opacity = '1';
-            }, 150);
-        }
-
-        document.getElementById('lightbox').addEventListener('click', function(e) {
-            if (e.target.id === 'lightbox' || e.target.classList.contains('close-lightbox')) {
-                closeLightbox();
-            }
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (!document.getElementById('lightbox').classList.contains('active')) return;
-            if (e.key === "ArrowRight") changeImg(1);
-            if (e.key === "ArrowLeft") changeImg(-1);
-            if (e.key === "Escape") closeLightbox();
-        });
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
