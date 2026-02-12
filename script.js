@@ -54,3 +54,28 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Controle do Loader (Tela de carregamento)
+    const loader = document.getElementById('loader');
+    if (loader) {
+        setTimeout(() => {
+            loader.style.transition = 'opacity 0.8s ease, visibility 0.8s';
+            loader.style.opacity = '0';
+            loader.style.visibility = 'hidden';
+        }, 1500); // 1.5 segundos é o ideal para o usuário não cansar
+    }
+
+    // 2. Scroll Suave para links internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
