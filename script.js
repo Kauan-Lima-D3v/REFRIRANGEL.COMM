@@ -1,45 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cursor = document.querySelector('.cursor');
-    const follower = document.querySelector('.cursor-follower');
-
-    // 1. Cursor Customizado
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        
-        setTimeout(() => {
-            follower.style.left = e.clientX - 11 + 'px';
-            follower.style.top = e.clientY - 11 + 'px';
-        }, 50);
-    });
-
-    // 2. Efeito Magnético
-    const magnets = document.querySelectorAll('.magnetic');
-    magnets.forEach((mag) => {
-        mag.addEventListener('mousemove', (e) => {
-            const rect = mag.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            const s = mag.getAttribute('data-strength') || 30;
-            mag.style.transform = `translate(${x/s}px, ${y/s}px)`;
-        });
-        mag.addEventListener('mouseleave', () => {
-            mag.style.transform = `translate(0px, 0px)`;
-        });
-    });
-
-    // 3. Loader
+    
+    // 1. Loader
     window.addEventListener('load', () => {
         const loader = document.getElementById('loader');
-        setTimeout(() => {
-            loader.style.clipPath = 'circle(0% at 50% 50%)';
-            setTimeout(() => { loader.style.display = 'none'; }, 1000);
-        }, 1500);
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 800);
     });
 
-    // 4. Header Scroll
+    // 2. Header Effects
     window.addEventListener('scroll', () => {
-        document.getElementById('main-header').classList.toggle('scrolled', window.scrollY > 50);
+        const header = document.getElementById('header');
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // 3. Sistema de Filtros do Showroom
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // UI Active State
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-cat');
+
+            cards.forEach(card => {
+                if(filter === 'todos' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 10);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        });
+    });
+
+    // 4. Efeito Magnético Suave nos Botões
+    const mainBtn = document.querySelector('.btn-main');
+    document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX - window.innerWidth / 2) / 50;
+        const y = (e.clientY - window.innerHeight / 2) / 50;
+        mainBtn.style.transform = `translate(${x}px, ${y}px)`;
     });
 });
 
