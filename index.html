@@ -3,179 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refri Rangel | Refrigeração Industrial</title> 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Refri Rangel | 16 Anos de Excelência</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --cyan: #00f2ff; 
+            --blue: #0066ff;
+            --dark: #050505;
             --blue-deep: #011628;
-            --dark-bg: #050505;
-            --card-gray: #0f0f0f;
-            --text-gray: #b0b0b0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--blue-deep); color: #fff; overflow-x: hidden; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
+        body { background-color: var(--blue-deep); color: #fff; overflow-x: hidden; transition: background-color 0.8s ease; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- LOADER COM REVELAÇÃO BICOLOR (MANTIDO PARA IMPACTO) --- */
+        /* --- LOADER --- */
         #loader {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 10000; display: flex; align-items: center; justify-content: center;
+            background: #000; z-index: 10000; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
         }
         .logo-load {
-            font-weight: 900; font-size: clamp(1.8rem, 6vw, 4rem); letter-spacing: 15px;
-            color: rgba(255,255,255,0.05); position: relative; text-transform: uppercase;
+            font-weight: 900; font-size: 3rem; letter-spacing: 10px;
+            color: var(--cyan); text-transform: uppercase;
+            animation: pulse-load 2s ease-in-out infinite;
         }
-        .logo-load::after {
-            content: "REFRI RANGEL"; position: absolute; left: 0; top: 0; width: 0%; height: 100%;
-            color: var(--cyan); overflow: hidden; border-right: 3px solid var(--cyan);
-            animation: fill-text 2s cubic-bezier(0.4, 0, 0.2, 1) forwards; white-space: nowrap;
-        }
-        @keyframes fill-text { 0% { width: 0%; } 100% { width: 100%; } }
+        @keyframes pulse-load { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+        .progress-bar { width: 200px; height: 2px; background: rgba(255,255,255,0.1); margin-top: 20px; border-radius: 10px; overflow: hidden; }
+        .progress-fill { width: 0%; height: 100%; background: var(--cyan); animation: loading-bar 2s forwards; }
+        @keyframes loading-bar { to { width: 100%; } }
 
-        /* --- HERO SECTION (TEXTOS AGORA 100% BRANCOS) --- */
-        .hero { min-height: 80vh; display: flex; align-items: center; background: radial-gradient(circle at 15% 50%, #02203c 0%, #000 100%); padding: 100px 0; }
-        
-        .hero-tagline { 
-            color: #fff; /* Removido o azul */
-            letter-spacing: 10px; 
-            font-weight: 900; 
-            display: block; 
-            margin-bottom: 25px; 
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
+        /* --- HEADER --- */
+        header { padding: 30px 0; position: absolute; width: 100%; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 900; font-size: 1.6rem; letter-spacing: 2px; }
+        .logo span { color: var(--cyan); }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
 
+        /* --- HERO (TEXTO BRANCO) --- */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            background: radial-gradient(circle at 50% 50%, #021a33 0%, #000 100%);
+        }
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5.5rem); 
-            font-weight: 900; 
-            line-height: 1.1;
-            text-transform: uppercase; 
-            margin-bottom: 35px;
-            color: #ffffff; /* Removido o gradiente azul */
-            -webkit-text-fill-color: initial; /* Garante que o texto fique branco */
-            background: none;
+            font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 1.1;
+            text-transform: uppercase; margin-bottom: 30px; color: #fff;
         }
+        .hero-tagline { color: #fff; letter-spacing: 8px; font-weight: 900; display: block; margin-bottom: 20px; font-size: 0.9rem; opacity: 0.8; }
+        .hero-description { color: #ccc; max-width: 650px; font-size: 1.3rem; margin-bottom: 40px; font-weight: 300; }
+        .btn-main { padding: 20px 40px; background: var(--cyan); color: #000; font-weight: 900; text-decoration: none; border-radius: 4px; text-transform: uppercase; transition: 0.3s; display: inline-block; }
 
-        .hero-description { 
-            color: #fff; /* Texto mais claro e sem azul */
-            max-width: 600px; 
-            font-size: 1.3rem; 
-            margin-bottom: 45px; 
-            font-weight: 300;
-            opacity: 0.7;
-        }
-
-        /* --- SEÇÃO DE COMENTÁRIOS (6 CARDS) --- */
-        .reviews-section { padding: 120px 0; background: var(--dark-bg); }
-        .section-title { font-size: 2.8rem; text-align: center; margin-bottom: 80px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; }
+        /* --- PRODUÇÃO E IMAGENS --- */
+        .section-padding { padding: 120px 0; }
+        .section-title { text-align:center; font-size: 3rem; margin-bottom: 70px; font-weight: 900; text-transform: uppercase; color: #fff; }
         .section-title span { color: var(--cyan); }
 
-        .reviews-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-            gap: 25px; 
+        .production-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .banner-item {
+            position: relative; height: 450px; border-radius: 15px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        .review-card {
-            background: var(--card-gray); padding: 45px; border-radius: 2px;
-            border-left: 1px solid #1a1a1a; position: relative;
-            transition: 0.4s ease;
-        }
-        .review-card:hover { background: #151515; border-left-color: var(--cyan); transform: translateY(-5px); }
-        .review-card .stars { color: var(--cyan); margin-bottom: 20px; font-size: 0.8rem; letter-spacing: 2px; }
-        .review-card p { color: #ddd; font-style: italic; margin-bottom: 25px; font-size: 1.05rem; line-height: 1.8; }
-        .review-card strong { display: block; color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #222; padding-top: 15px; }
+        .img-layer img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); transition: 0.6s; }
+        .banner-item:hover img { filter: brightness(0.8); transform: scale(1.05); }
+        .banner-content { position: absolute; bottom: 0; padding: 30px; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.9)); }
+        .banner-content h4 { font-size: 1.5rem; color: var(--cyan); margin-bottom: 5px; }
 
-        /* --- RODAPÉ --- */
-        footer { background: #000; padding: 100px 0 40px 0; border-top: 1px solid #111; color: var(--text-gray); }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
-        .footer-brand h2 { color: #fff; font-weight: 900; font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
-        .footer-brand span { color: var(--cyan); }
-        .footer-nav h3, .footer-contact h3 { color: #fff; font-size: 0.9rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 3px; }
-        .footer-nav ul { list-style: none; }
-        .footer-nav li { margin-bottom: 15px; }
-        .footer-nav a { color: var(--text-gray); text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
-        .footer-nav a:hover { color: var(--cyan); }
-        .footer-contact p { margin-bottom: 18px; font-size: 0.95rem; }
-        .copyright { text-align: center; padding-top: 40px; border-top: 1px solid #111; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; }
+        /* --- SEDE --- */
+        .sede-premium { display: flex; flex-wrap: wrap; background: #080808; border-radius: 20px; overflow: hidden; margin-top: 80px; border: 1px solid #111; }
+        
+        /* --- COMENTÁRIOS (6 CARDS) --- */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 50px; }
+        .review-card { background: #0a0a0a; padding: 35px; border-left: 3px solid var(--cyan); }
+        .review-card p { font-style: italic; color: #aaa; margin-bottom: 15px; }
+        .review-card strong { color: #fff; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
-        /* WHATSAPP */
-        .whatsapp-float { 
-            position: fixed; bottom: 40px; right: 40px; background: #25d366; 
-            width: 65px; height: 65px; border-radius: 50%; display: flex; 
-            align-items: center; justify-content: center; z-index: 1000; 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4); transition: 0.3s;
-        }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+        /* --- RODAPÉ (O SEU "ROSPE" ROBUSTO) --- */
+        footer { background: #000; padding: 80px 0 30px 0; border-top: 1px solid #111; margin-top: 100px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        .footer-col h3 { color: #fff; margin-bottom: 25px; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; }
+        .footer-col p, .footer-col a { color: #666; text-decoration: none; display: block; margin-bottom: 10px; font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--cyan); }
+        .copyright { text-align: center; border-top: 1px solid #111; padding-top: 30px; color: #444; font-size: 0.8rem; letter-spacing: 2px; }
 
-        @media (max-width: 900px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-        }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; }
     </style>
 </head>
 <body>
 
     <div id="loader">
         <h1 class="logo-load">REFRI RANGEL</h1>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
     </div>
 
     <a href="https://wa.me/551140282982" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="32" alt="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
     </a>
+
+    <header>
+        <nav class="container">
+            <div class="logo">REFRI<span>RANGEL</span></div>
+            <div class="nav-links">
+                <a href="#producao">Produção</a>
+                <a href="#depoimentos">Clientes</a>
+                <a href="https://instagram.com" style="color:var(--cyan)">Instagram</a>
+            </div>
+        </nav>
+    </header>
 
     <main>
         <section class="hero">
             <div class="container">
-                <span class="hero-tagline">QUALIDADE INDUSTRIAL EM INOX</span>
+                <span class="hero-tagline">16 ANOS DE QUALIDADE</span>
                 <h1>A Força do Aço,<br>O Poder do Frio.</h1>
-                <p class="hero-description">Excelência em balcões, vitrines e câmaras frias projetadas para durar décadas com tecnologia de ponta.</p>
-                <a href="#" style="background:var(--cyan); color:#000; padding:22px 50px; text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:2px; font-size:0.9rem;">Ver Catálogo</a>
+                <p class="hero-description">Equipamentos industriais em Inox 304 fabricados com a mais alta precisão para elevar o nível do seu negócio.</p>
+                <a href="https://wa.me/551140282982" class="btn-main">Falar com Consultor</a>
             </div>
         </section>
 
-        <section class="reviews-section">
-            <div class="container">
-                <h2 class="section-title">Confiança de quem <span>Produz</span></h2>
-                
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"O balcão é um tanque de guerra, excelente resistência! O acabamento em Inox 304 faz toda a diferença na limpeza."</p>
-                        <strong>⭐ Padaria Milão</strong>
-                    </div>
-                    
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"Frio extremamente estável e acabamento impecável. Meus produtos valorizaram 100% na vitrine nova."</p>
-                        <strong>⭐ Empório Luzia</strong>
-                    </div>
-                    
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"A vitrine valorizou muito meus produtos. O sistema de iluminação em LED e o isolamento são fantásticos."</p>
-                        <strong>⭐ Posto America</strong>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"Inox de alta qualidade e projeto sob medida que encaixou perfeitamente no meu espaço. Recomendo muito!"</p>
-                        <strong>⭐ Adega Rubin</strong>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"Melhor custo-benefício da região. Equipamento robusto que não dá manutenção. Ótimo pós-venda."</p>
-                        <strong>⭐ Padaria Real</strong>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"O isolamento térmico é superior. Notei uma economia de energia considerável após trocar os balcões antigos."</p>
-                        <strong>⭐ Supermercado Silva</strong>
-                    </div>
+        <section id="producao" class="container section-padding">
+            <h2 class="section-title">Nossa <span>Produção</span></h2>
+            <div class="production-gallery">
+                <div class="banner-item">
+                    <div class="img-layer"><img src="img09 (17).jpeg"></div>
+                    <div class="banner-content"><h4>Corte a Laser</h4><p>Precisão milimétrica no aço.</p></div>
                 </div>
+                <div class="banner-item">
+                    <div class="img-layer"><img src="img09 (16).jpeg"></div>
+                    <div class="banner-content"><h4>Isolamento</h4><p>Poliuretano de alta densidade.</p></div>
+                </div>
+                <div class="banner-item">
+                    <div class="img-layer"><img src="img09 (11).jpeg"></div>
+                    <div class="banner-content"><h4>Qualidade</h4><p>Testes rigorosos de frio.</p></div>
+                </div>
+            </div>
+
+            <div class="sede-premium">
+                <div style="flex:1.2; min-width:350px; height:450px;"><img src="img09 (18).jpeg" style="width:100%; height:100%; object-fit:cover;"></div>
+                <div style="flex:1; padding:50px; min-width:320px;">
+                    <span style="color:var(--cyan); font-weight:900; letter-spacing: 3px;">LOCALIZAÇÃO</span>
+                    <h3 style="font-size:2rem; margin:15px 0;">Sede Salto/SP</h3>
+                    <p style="color:#777;">Unidade fabril estratégica para atendimento nacional com logística ágil.</p>
+                    <a href="#" style="color:var(--cyan); text-decoration:none; font-weight:700; display:block; margin-top:20px;">📍 VER NO MAPA</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="container section-padding">
+            <h2 class="section-title">Quem <span>Confia</span></h2>
+            <div class="reviews-grid">
+                <div class="review-card"><p>"O balcão é um tanque de guerra, resistência nota 10."</p><strong>⭐ Padaria Milão</strong></div>
+                <div class="review-card"><p>"Estabilidade térmica que não vi em outra marca."</p><strong>⭐ Empório Luzia</strong></div>
+                <div class="review-card"><p>"A estética do Inox valorizou muito o ambiente."</p><strong>⭐ Posto America</strong></div>
+                <div class="review-card"><p>"Entrega rápida e produto impecável."</p><strong>⭐ Adega Rubin</strong></div>
+                <div class="review-card"><p>"O melhor pós-venda que já tive em equipamentos."</p><strong>⭐ Padaria Real</strong></div>
+                <div class="review-card"><p>"Economia de energia nítida com o novo isolamento."</p><strong>⭐ Mercado Silva</strong></div>
             </div>
         </section>
     </main>
@@ -183,26 +165,25 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2>REFRI<span>RANGEL</span></h2>
-                    <p>Especialistas em refrigeração industrial. Projetamos e fabricamos equipamentos em aço inox para alta performance gastronômica.</p>
+                <div class="footer-col">
+                    <div class="logo">REFRI<span>RANGEL</span></div>
+                    <p style="margin-top:20px;">Tecnologia de ponta em refrigeração industrial desde 2010.</p>
                 </div>
-                <div class="footer-nav">
-                    <h3>Empresa</h3>
-                    <ul>
-                        <li><a href="#">Equipamentos</a></li>
-                        <li><a href="#">Nossa Fábrica</a></li>
-                        <li><a href="#">Orçamentos</a></li>
-                    </ul>
+                <div class="footer-col">
+                    <h3>Navegação</h3>
+                    <a href="#">Equipamentos</a>
+                    <a href="#">Sobre Nós</a>
+                    <a href="#">Orçamentos</a>
                 </div>
-                <div class="footer-contact">
+                <div class="footer-col">
                     <h3>Contato</h3>
-                    <p>📍 Salto/SP - Distrito Industrial</p>
+                    <p>📍 Salto, SP</p>
                     <p>📞 (11) 4028-2982</p>
+                    <p>✉️ comercial@refrirangel.com.br</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2026 REFRI RANGEL - SALTO/SP - BRASIL</p>
+                © 2026 REFRI RANGEL - TODOS OS DIREITOS RESERVADOS
             </div>
         </div>
     </footer>
@@ -212,11 +193,22 @@
             const loader = document.getElementById('loader');
             setTimeout(() => {
                 loader.style.opacity = '0';
-                loader.style.transition = '0.8s ease-in-out';
-                setTimeout(() => loader.style.display = 'none', 800);
-            }, 2500);
+                loader.style.transition = '0.5s';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 2000);
+        });
+
+        window.addEventListener('scroll', () => {
+            const section = document.querySelector('#producao');
+            if(window.scrollY > section.offsetTop - 400) {
+                document.body.style.backgroundColor = "#000";
+            } else {
+                document.body.style.backgroundColor = "#011628";
+            }
         });
     </script>
 </body>
 </html>
+</html>
+
 
