@@ -3,19 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showroom Virtual | Refri Rangel</title>
+    <title>Showroom | Refri Rangel</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
 </head>
-<body class="page-products">
+<body>
 
-    <div id="loader">
-        <div class="loader-content">
-            <h1 class="logo-load">REFRI<span>RANGEL</span></h1>
-            <div class="progress-bar"><div class="progress-fill"></div></div>
-            <p>CARREGANDO SHOWROOM...</p>
-        </div>
-    </div>
+    <div id="loader"><div class="loader-content"><h1 class="logo-load">REFRI<span>RANGEL</span></h1><div class="progress-bar"><div class="progress-fill"></div></div></div></div>
 
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <span class="close-lightbox">&times;</span>
@@ -27,24 +21,19 @@
             <div class="logo">REFRI<span>RANGEL</span></div>
             <div class="nav-links">
                 <a href="index.html">Início</a>
-                <a href="https://wa.me/551140282982" class="btn-nav">ORÇAMENTO VIA WHATSAPP</a>
+                <a href="https://wa.me/551140282982" class="btn-nav">WHATSAPP</a>
             </div>
         </nav>
     </header>
 
-    <main class="container section-padding">
-        <div class="catalog-header">
-            <span class="tag">Qualidade Industrial</span>
-            <h1>Nosso Showroom</h1>
-            <p>Explore nossa linha completa de equipamentos em aço inox.</p>
+    <main class="container">
+        <div class="catalog-header" style="text-align: center; padding: 60px 0 20px;">
+            <span class="tag">Showroom 2026</span>
+            <h1>Nossa Linha Inox</h1>
         </div>
 
         <div class="controls-container">
-            <div class="search-wrapper">
-                <input type="text" id="productSearch" placeholder="O que você procura? (Ex: Balcão 2000)">
-                <span class="search-icon">🔍</span>
-            </div>
-
+            <input type="text" id="productSearch" placeholder="Pesquisar produto... (Ex: Balcão, 2000, Inox)">
             <div class="filter-bar">
                 <button class="filter-btn active" onclick="filterProducts('todos')">Todos</button>
                 <button class="filter-btn" onclick="filterProducts('balcoes')">Balcões</button>
@@ -55,68 +44,74 @@
         </div>
 
         <div class="product-grid" id="product-grid">
-            
             <div class="product-card" data-category="balcoes">
-                <div class="img-wrapper" onclick="openLightbox('img26dona.jpeg')">
-                    <img src="img26dona.jpeg" alt="Balcão POP">
-                    <div class="zoom-overlay">🔍 Ampliar</div>
-                </div>
-                <div class="p-info">
-                    <h3>Balcão Refrigerado POP</h3>
-                    <p>Inox 430 com isolamento térmico premium.</p>
-                    <a href="https://wa.me/551140282982?text=Orçamento: Balcão POP" class="btn-buy">CONSULTAR PREÇO</a>
-                </div>
+                <div class="img-wrapper" onclick="openLightbox('img26dona.jpeg')"><img src="img26dona.jpeg"></div>
+                <div class="p-info"><h3>Balcão Refrigerado POP</h3><p>Inox 430 de alta resistência.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
             </div>
-
             <div class="product-card" data-category="balcoes">
-                <div class="img-wrapper" onclick="openLightbox('img09 (2).jpeg')">
-                    <img src="img09 (2).jpeg" alt="Balcão POP 1250">
-                </div>
-                <div class="p-info">
-                    <h3>Balcão POP 1250</h3>
-                    <p>Alta durabilidade e baixo consumo de energia.</p>
-                    <a href="https://wa.me/551140282982?text=Orçamento: Balcão 1250" class="btn-buy">CONSULTAR PREÇO</a>
-                </div>
+                <div class="img-wrapper" onclick="openLightbox('img09 (1).jpeg')"><img src="img09 (1).jpeg"></div>
+                <div class="p-info"><h3>Geladeira 6 Portas</h3><p>Capacidade industrial máxima.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
+            </div>
+            <div class="product-card" data-category="balcoes">
+                <div class="img-wrapper" onclick="openLightbox('img09 (2).jpeg')"><img src="img09 (2).jpeg"></div>
+                <div class="p-info"><h3>Balcão POP 1250</h3><p>Eficiência térmica garantida.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
+            </div>
+            <div class="product-card" data-category="balcoes">
+                <div class="img-wrapper" onclick="openLightbox('img09 (3).jpeg')"><img src="img09 (3).jpeg"></div>
+                <div class="p-info"><h3>Balcão POP 1000</h3><p>Compacto e potente.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
             </div>
 
             <div class="product-card" data-category="vitrines">
-                <div class="img-wrapper" onclick="openLightbox('img09 (4).jpeg')">
-                    <img src="img09 (4).jpeg" alt="Vitrine Seca 2000">
-                </div>
-                <div class="p-info">
-                    <h3>Vitrine Seca 2000</h3>
-                    <p>Vidro temperado e acabamento fino em inox.</p>
-                    <a href="https://wa.me/551140282982?text=Orçamento: Vitrine 2000" class="btn-buy">CONSULTAR PREÇO</a>
-                </div>
+                <div class="img-wrapper" onclick="openLightbox('img09 (4).jpeg')"><img src="img09 (4).jpeg"></div>
+                <div class="p-info"><h3>Vitrine Seca 2000</h3><p>Exposição premium de produtos.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
             </div>
-
-            <div class="product-card" data-category="encostos">
-                <div class="img-wrapper" onclick="openLightbox('img09 (21).jpeg')">
-                    <img src="img09 (21).jpeg" alt="Encosto Cuba">
-                </div>
-                <div class="p-info">
-                    <h3>Encosto com Cuba 2000</h3>
-                    <p>Mesa de trabalho com pia integrada em Inox.</p>
-                    <a href="https://wa.me/551140282982?text=Orçamento: Encosto Cuba" class="btn-buy">CONSULTAR PREÇO</a>
-                </div>
+            <div class="product-card" data-category="vitrines">
+                <div class="img-wrapper" onclick="openLightbox('img09 (5).jpeg')"><img src="img09 (5).jpeg"></div>
+                <div class="p-info"><h3>Vitrine Refrigerada 1500</h3><p>Para bolos e laticínios.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
+            </div>
+            <div class="product-card" data-category="vitrines">
+                <div class="img-wrapper" onclick="openLightbox('img09 (6).jpeg')"><img src="img09 (6).jpeg"></div>
+                <div class="p-info"><h3>Expositor Inox LED</h3><p>Design moderno com iluminação.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
             </div>
 
             <div class="product-card" data-category="caixas">
-                <div class="img-wrapper" onclick="openLightbox('img09 (10).jpeg')">
-                    <img src="img09 (10).jpeg" alt="Caixa 600">
-                </div>
-                <div class="p-info">
-                    <h3>Balcão Caixa 600</h3>
-                    <p>Design ergonômico para frente de caixa.</p>
-                    <a href="https://wa.me/551140282982?text=Orçamento: Caixa 600" class="btn-buy">CONSULTAR PREÇO</a>
-                </div>
+                <div class="img-wrapper" onclick="openLightbox('img09 (10).jpeg')"><img src="img09 (10).jpeg"></div>
+                <div class="p-info"><h3>Balcão Caixa 600</h3><p>Agilidade no PDV.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
+            </div>
+            <div class="product-card" data-category="caixas">
+                <div class="img-wrapper" onclick="openLightbox('img09 (12).jpeg')"><img src="img09 (12).jpeg"></div>
+                <div class="p-info"><h3>Caixa Master Inox</h3><p>Acabamento de luxo.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
             </div>
 
+            <div class="product-card" data-category="encostos">
+                <div class="img-wrapper" onclick="openLightbox('img09 (21).jpeg')"><img src="img09 (21).jpeg"></div>
+                <div class="p-info"><h3>Pia Industrial Dupla</h3><p>Higiene e praticidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
             </div>
+            <div class="product-card" data-category="encostos">
+                <div class="img-wrapper" onclick="openLightbox('img09 (23).jpeg')"><img src="img09 (23).jpeg"></div>
+                <div class="p-info"><h3>Mesa Encosto 1500</h3><p>Refrigeração sob bancada.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div>
+            </div>
+
+            <div class="product-card" data-category="balcoes"><div class="img-wrapper" onclick="openLightbox('img09 (7).jpeg')"><img src="img09 (7).jpeg"></div><div class="p-info"><h3>Equipamento 07</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="balcoes"><div class="img-wrapper" onclick="openLightbox('img09 (8).jpeg')"><img src="img09 (8).jpeg"></div><div class="p-info"><h3>Equipamento 08</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="balcoes"><div class="img-wrapper" onclick="openLightbox('img09 (9).jpeg')"><img src="img09 (9).jpeg"></div><div class="p-info"><h3>Equipamento 09</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="vitrines"><div class="img-wrapper" onclick="openLightbox('img09 (11).jpeg')"><img src="img09 (11).jpeg"></div><div class="p-info"><h3>Equipamento 11</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="vitrines"><div class="img-wrapper" onclick="openLightbox('img09 (13).jpeg')"><img src="img09 (13).jpeg"></div><div class="p-info"><h3>Equipamento 13</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="caixas"><div class="img-wrapper" onclick="openLightbox('img09 (14).jpeg')"><img src="img09 (14).jpeg"></div><div class="p-info"><h3>Equipamento 14</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="caixas"><div class="img-wrapper" onclick="openLightbox('img09 (15).jpeg')"><img src="img09 (15).jpeg"></div><div class="p-info"><h3>Equipamento 15</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="encostos"><div class="img-wrapper" onclick="openLightbox('img09 (16).jpeg')"><img src="img09 (16).jpeg"></div><div class="p-info"><h3>Equipamento 16</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="encostos"><div class="img-wrapper" onclick="openLightbox('img09 (17).jpeg')"><img src="img09 (17).jpeg"></div><div class="p-info"><h3>Equipamento 17</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="balcoes"><div class="img-wrapper" onclick="openLightbox('img09 (18).jpeg')"><img src="img09 (18).jpeg"></div><div class="p-info"><h3>Equipamento 18</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="balcoes"><div class="img-wrapper" onclick="openLightbox('img09 (19).jpeg')"><img src="img09 (19).jpeg"></div><div class="p-info"><h3>Equipamento 19</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="balcoes"><div class="img-wrapper" onclick="openLightbox('img09 (20).jpeg')"><img src="img09 (20).jpeg"></div><div class="p-info"><h3>Equipamento 20</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="balcoes"><div class="img-wrapper" onclick="openLightbox('img09 (22).jpeg')"><img src="img09 (22).jpeg"></div><div class="p-info"><h3>Equipamento 22</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="balcoes"><div class="img-wrapper" onclick="openLightbox('img09 (24).jpeg')"><img src="img09 (24).jpeg"></div><div class="p-info"><h3>Equipamento 24</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+            <div class="product-card" data-category="balcoes"><div class="img-wrapper" onclick="openLightbox('img09 (25).jpeg')"><img src="img09 (25).jpeg"></div><div class="p-info"><h3>Equipamento 25</h3><p>Refri Rangel Qualidade.</p><a href="https://wa.me/551140282982" class="btn-buy">ORÇAMENTO</a></div></div>
+        </div>
     </main>
 
-    <footer class="modern-footer">
-        <p>&copy; 2026 Refri Rangel - 16 Anos de História.</p>
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; font-size: 0.8rem; opacity: 0.5;">
+        &copy; 2026 REFRI RANGEL - TODOS OS DIREITOS RESERVADOS.
     </footer>
 
     <script src="script.js"></script>
