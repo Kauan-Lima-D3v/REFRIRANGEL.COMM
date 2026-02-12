@@ -1,116 +1,69 @@
-/* --- VARIÁVEIS DE ELITE --- */
+/* RESET E CORES */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-    --primary: #00d4ff;      /* Ciano Neon */
-    --dark-bg: #050507;     /* Fundo profundo */
-    --card-bg: #0d0d10;     /* Background dos cards */
-    --text-main: #ffffff;
-    --text-dim: #a0a0a5;
-    --glass: rgba(255, 255, 255, 0.03);
-    --border: rgba(255, 255, 255, 0.08);
-    --font-h: 'Syncopate', sans-serif;
+    --primary: #003366; /* Azul Profundo */
+    --secondary: #00a8ff; /* Azul Brilhante */
+    --white: #ffffff;
+    --light-bg: #f4f7f6;
+    --glass: rgba(255, 255, 255, 0.1);
 }
 
-/* --- RESET E BASE --- */
-* { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
-html { scroll-behavior: smooth; }
-body { 
-    background-color: var(--dark-bg); 
-    color: var(--text-main); 
-    font-family: 'Inter', sans-serif; 
-    overflow-x: hidden;
-    line-height: 1.6;
-}
-.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; color: #333; }
 
-/* --- LOADER --- */
-#loader {
-    position: fixed; inset: 0; background: #000; z-index: 9999;
-    display: flex; justify-content: center; align-items: center;
+/* PRELOADER */
+#preloader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: var(--primary); z-index: 9999;
+    display: flex; justify-content: center; align-items: center; color: white;
 }
-.logo-load { font-family: var(--font-h); font-size: 2rem; font-weight: 900; margin-bottom: 20px; }
-.logo-load span { color: var(--primary); }
-.progress-bar { width: 250px; height: 2px; background: #222; position: relative; overflow: hidden; }
-.progress-fill { 
-    position: absolute; width: 100%; height: 100%; background: var(--primary); 
-    box-shadow: 0 0 15px var(--primary); animation: loading 2s forwards;
+.spinner {
+    width: 50px; height: 50px; border: 5px solid var(--glass);
+    border-top-color: var(--secondary); border-radius: 50%;
+    animation: spin 1s infinite linear;
 }
-@keyframes loading { from { width: 0%; } to { width: 100%; } }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-/* --- HEADER GLASS --- */
+/* HEADER */
 header {
-    height: 90px; display: flex; align-items: center; position: sticky; top: 0;
-    background: rgba(5, 5, 7, 0.8); backdrop-filter: blur(20px);
-    z-index: 1000; border-bottom: 1px solid var(--border);
+    background: rgba(0, 51, 102, 0.95); backdrop-filter: blur(10px);
+    padding: 20px 0; position: fixed; width: 100%; z-index: 1000;
 }
-nav { display: flex; justify-content: space-between; width: 100%; align-items: center; }
-.logo { font-family: var(--font-h); font-size: 1.2rem; font-weight: 700; }
-.logo span { color: var(--primary); }
-.nav-links a { text-decoration: none; color: #fff; font-weight: 700; font-size: 0.75rem; margin-left: 30px; letter-spacing: 1px; transition: 0.3s; }
-.btn-nav { background: var(--primary); color: #000 !important; padding: 12px 25px; border-radius: 4px; }
+nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; padding: 0 20px; }
+.logo { color: white; font-weight: 900; font-size: 1.5rem; letter-spacing: 2px; }
+.logo span { color: var(--secondary); }
+nav ul { display: flex; list-style: none; }
+nav ul li a { color: white; text-decoration: none; margin-left: 30px; font-weight: 600; transition: 0.3s; }
+.btn-contato { background: var(--secondary); padding: 10px 20px; border-radius: 50px; }
 
-/* --- CATALOG HEADER --- */
-.catalog-header h1 { font-family: var(--font-h); font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -2px; text-transform: uppercase; margin-top: 10px; }
-.tag { color: var(--primary); font-weight: 900; letter-spacing: 5px; text-transform: uppercase; font-size: 0.7rem; }
+/* HERO */
+.hero {
+    height: 100vh; background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('img09 (10).jpeg');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+}
+.hero h1 { font-size: 4rem; margin-bottom: 20px; text-transform: uppercase; }
+.btn-primary { background: var(--secondary); padding: 15px 40px; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; margin-right: 15px; }
 
-/* --- PESQUISA E FILTROS --- */
-.controls-container { margin: 40px 0; text-align: center; }
-#productSearch {
-    width: 100%; max-width: 600px; padding: 18px 30px; background: var(--card-bg);
-    border: 1px solid var(--border); border-radius: 50px; color: #fff; font-size: 1rem;
-    margin-bottom: 30px; transition: 0.3s;
+/* GALERIA GRID */
+.grid-produtos {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px; padding: 40px; background: var(--white);
 }
-#productSearch:focus { border-color: var(--primary); box-shadow: 0 0 20px rgba(0, 212, 255, 0.15); }
+.card { position: relative; height: 350px; border-radius: 10px; overflow: hidden; cursor: pointer; }
+.card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.card:hover img { transform: scale(1.1); }
+.overlay {
+    position: absolute; bottom: 0; width: 100%; height: 100%;
+    background: linear-gradient(transparent, var(--primary));
+    display: flex; align-items: flex-end; padding: 20px; color: white; opacity: 0; transition: 0.3s;
+}
+.card:hover .overlay { opacity: 1; }
 
-.filter-bar { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-.filter-btn {
-    background: var(--glass); border: 1px solid var(--border); color: var(--text-dim);
-    padding: 12px 28px; border-radius: 50px; cursor: pointer; font-weight: 700; font-size: 0.7rem; transition: 0.3s; text-transform: uppercase;
+/* FLOATING BUTTONS */
+.float-btn {
+    position: fixed; width: 60px; height: 60px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1001;
 }
-.filter-btn:hover, .filter-btn.active { 
-    background: var(--primary); color: #000; border-color: var(--primary); 
-    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
-}
-
-/* --- GRID E CARDS --- */
-.product-grid { 
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-    gap: 40px; padding-bottom: 100px;
-}
-.product-card {
-    background: var(--card-bg); border-radius: 15px; overflow: hidden;
-    border: 1px solid var(--border); transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.product-card:hover { transform: translateY(-15px); border-color: var(--primary); box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
-
-.img-wrapper { 
-    height: 380px; overflow: hidden; cursor: pointer; background: #000;
-}
-.img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; opacity: 0.8; }
-.product-card:hover .img-wrapper img { transform: scale(1.1); opacity: 1; }
-
-.p-info { padding: 30px; text-align: center; }
-.p-info h3 { font-family: var(--font-h); font-size: 1.1rem; margin-bottom: 12px; text-transform: uppercase; }
-.p-info p { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 25px; }
-
-.btn-buy {
-    display: block; border: 1px solid var(--primary); color: var(--primary);
-    text-decoration: none; padding: 15px; border-radius: 4px; font-weight: 900;
-    font-size: 0.75rem; letter-spacing: 2px; transition: 0.3s;
-}
-.btn-buy:hover { background: var(--primary); color: #000; }
-
-/* --- LIGHTBOX --- */
-.lightbox {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 2000;
-    display: none; justify-content: center; align-items: center; backdrop-filter: blur(15px);
-}
-.lightbox img { max-width: 90%; max-height: 85%; border-radius: 10px; border: 1px solid var(--glass); }
-.close-lightbox { position: absolute; top: 30px; right: 40px; font-size: 3.5rem; color: #fff; cursor: pointer; }
-
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-    .container { padding: 0 20px; }
-    .product-grid { grid-template-columns: 1fr; }
-    .catalog-header h1 { font-size: 2.2rem; }
-}
+.whats { bottom: 40px; right: 40px; background: #25d366; text-decoration: none; }
 
