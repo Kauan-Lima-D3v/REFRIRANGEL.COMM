@@ -3,111 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refri Rangel | 16 Anos de Excelência</title> 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Refri Rangel | Engenharia em Inox</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div id="loader">
-        <h1 class="logo-load">REFRI RANGEL</h1>
-        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <div class="loader-wrapper">
+            <div class="loader-line"></div>
+            <div class="loader-text">
+                <span class="reveal-text">REFRI RANGEL</span>
+                <div class="loader-sub">EXCELÊNCIA EM INOX</div>
+            </div>
+        </div>
     </div>
 
-    <a href="https://wa.me/551140282982" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
+    <a href="https://wa.me/551140282982" class="whatsapp-premium" target="_blank" title="Falar com Especialista">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
-    <header>
+    <header id="main-header">
         <nav class="container">
             <div class="logo">REFRI<span>RANGEL</span></div>
             <div class="nav-links">
-                <a href="#producao">Produção</a>
-                <a href="#depoimentos">Clientes</a>
-                <a href="produtos.html">Showroom</a>
-                <a href="https://instagram.com/refrirangelbalcoes" style="color:var(--cyan)">Instagram</a>
+                <a href="#producao" class="nav-item">PRODUÇÃO</a>
+                <a href="#depoimentos" class="nav-item">CLIENTES</a>
+                <a href="produtos.html" class="nav-item">SHOWROOM</a>
+                <a href="https://instagram.com/refrirangelbalcoes" target="_blank" class="nav-btn-insta">INSTAGRAM</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero-v2">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="hero-text-box">
+                    <span class="hero-badge">SINCE 2010</span>
+                    <h1 class="split-type">A Engenharia do <br><span class="highlight">Aço Impecável.</span></h1>
+                    <p>Soluções térmicas de alta performance para quem não aceita menos que a perfeição.</p>
+                    <div class="hero-actions">
+                        <a href="produtos.html" class="btn-primary">VER EQUIPAMENTOS</a>
+                        <a href="https://wa.me/551140282982" class="btn-secondary">ORÇAMENTO RÁPIDO</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="producao" class="section-padding">
             <div class="container">
-                <span class="hero-tagline">16 ANOS DE QUALIDADE</span>
-                <h1>A Força do Aço,<br>O Poder do Frio.</h1>
-                <p class="hero-description">Equipamentos industriais em Inox 304 fabricados com a mais alta precisão para elevar o nível do seu negócio.</p>
-                <a href="produtos.html" class="btn-main">Explorar Catálogo</a>
-            </div>
-        </section>
-
-        <section id="producao" class="container section-padding">
-            <h2 class="section-title">Nossa <span>Produção</span></h2>
-            <div class="production-gallery">
-                <div class="banner-item">
-                    <div class="img-layer"><img src="img09 (17).jpeg"></div>
-                    <div class="banner-content"><h4>Corte a Laser</h4><p>Precisão milimétrica no aço.</p></div>
+                <div class="section-info">
+                    <h2 class="title-lg">Nossa <span>Produção</span></h2>
+                    <p>Tecnologia alemã de corte e isolamento injetado.</p>
                 </div>
-                <div class="banner-item">
-                    <div class="img-layer"><img src="img09 (16).jpeg"></div>
-                    <div class="banner-content"><h4>Isolamento</h4><p>Poliuretano de alta densidade.</p></div>
-                </div>
-                <div class="banner-item">
-                    <div class="img-layer"><img src="img09 (11).jpeg"></div>
-                    <div class="banner-content"><h4>Qualidade</h4><p>Testes rigorosos de frio.</p></div>
-                </div>
-            </div>
-
-            <div class="sede-premium">
-                <div style="flex:1.2; min-width:350px; height:450px;"><img src="img09 (18).jpeg" style="width:100%; height:100%; object-fit:cover;"></div>
-                <div style="flex:1; padding:50px; min-width:320px;">
-                    <span style="color:var(--cyan); font-weight:900; letter-spacing: 3px;">LOCALIZAÇÃO</span>
-                    <h3 style="font-size:2rem; margin:15px 0;">Sede Salto/SP</h3>
-                    <p style="color:#777;">Unidade fabril estratégica para atendimento nacional com logística ágil.</p>
-                    <a href="https://goo.gl/maps/seu-link" target="_blank" style="color:var(--cyan); text-decoration:none; font-weight:700; display:block; margin-top:20px;">📍 VER NO MAPA</a>
+                
+                <div class="production-grid">
+                    <div class="prod-card large" style="background-image: url('img09 (17).jpeg');">
+                        <div class="card-overlay">
+                            <h3>Corte a Laser</h3>
+                            <p>Acabamento cirúrgico em cada chapa de Inox 304.</p>
+                        </div>
+                    </div>
+                    <div class="prod-card" style="background-image: url('img09 (16).jpeg');">
+                        <div class="card-overlay">
+                            <h3>Injeção Térmica</h3>
+                            <p>Isolamento de última geração.</p>
+                        </div>
+                    </div>
+                    <div class="prod-card" style="background-image: url('img09 (11).jpeg');">
+                        <div class="card-overlay">
+                            <h3>Performance</h3>
+                            <p>Testes de estresse térmico.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="depoimentos" class="container section-padding">
-            <h2 class="section-title">Quem <span>Confia</span></h2>
-            <div class="reviews-grid">
-                <div class="review-card"><p>"O balcão é um tanque de guerra, resistência nota 10."</p><strong>⭐ Padaria Milão</strong></div>
-                <div class="review-card"><p>"Estabilidade térmica que não vi em outra marca."</p><strong>⭐ Empório Luzia</strong></div>
-                <div class="review-card"><p>"A estética do Inox valorizou muito o ambiente."</p><strong>⭐ Posto America</strong></div>
-                <div class="review-card"><p>"Entrega rápida e produto impecável."</p><strong>⭐ Adega Rubin</strong></div>
-                <div class="review-card"><p>"O melhor pós-venda que já tive em equipamentos."</p><strong>⭐ Padaria Real</strong></div>
-                <div class="review-card"><p>"Economia de energia nítida com o novo isolamento."</p><strong>⭐ Mercado Silva</strong></div>
+        <section class="location-section">
+            <div class="container grid-2">
+                <div class="loc-img">
+                    <img src="img09 (18).jpeg" alt="Fábrica Refri Rangel">
+                </div>
+                <div class="loc-content">
+                    <span class="accent-text">ESTRUTURA</span>
+                    <h2>Sede Industrial Salto/SP</h2>
+                    <p>Localizada no coração industrial de São Paulo, nossa fábrica conta com mais de 1000m² dedicados à inovação e produção em série de balcões e refrigeradores industriais.</p>
+                    <a href="https://goo.gl/maps/seu-link" target="_blank" class="btn-outline">COMO CHEGAR</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="section-padding dark-bg">
+            <div class="container">
+                <h2 class="title-lg center">Quem Confia na <span>Rangel</span></h2>
+                <div class="review-slider">
+                    <div class="review-item">
+                        <p>"Superou todas as expectativas técnicas. O acabamento é de outro mundo."</p>
+                        <h4>Padaria Milão</h4>
+                    </div>
+                    <div class="review-item">
+                        <p>"Equipamento robusto que valorizou minha loja."</p>
+                        <h4>Adega Rubin</h4>
+                    </div>
+                    <div class="review-item">
+                        <p>"O melhor custo-benefício em Inox que já encontrei."</p>
+                        <h4>Posto America</h4>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
+            <div class="footer-main">
+                <div class="footer-brand">
                     <div class="logo">REFRI<span>RANGEL</span></div>
-                    <p style="margin-top:20px;">Tecnologia de ponta em refrigeração industrial desde 2010.</p>
+                    <p>Qualidade que resiste ao tempo.</p>
                 </div>
-                <div class="footer-col">
-                    <h3>Navegação</h3>
-                    <a href="produtos.html">Equipamentos</a>
-                    <a href="#">Sobre Nós</a>
-                    <a href="https://wa.me/551140282982">Orçamentos</a>
-                </div>
-                <div class="footer-col">
-                    <h3>Contato</h3>
-                    <p>📍 Salto, SP</p>
-                    <p>📞 (11) 4028-2982</p>
+                <div class="footer-contact">
+                    <p>📍 Salto, SP | 📞 (11) 4028-2982</p>
                     <p>✉️ comercial@refrirangel.com.br</p>
                 </div>
             </div>
-            <div class="copyright">
-                © 2026 REFRI RANGEL - TODOS OS DIREITOS RESERVADOS
+            <div class="footer-bottom">
+                <p>&copy; 2026 REFRI RANGEL - DESIGN BY AI</p>
             </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
