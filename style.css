@@ -157,3 +157,15 @@ footer { padding: 60px 0; border-top: 1px dotted #333; }
     .tech-visual { height: 300px; }
 }
 
+/* Botão Flutuante de Cores */
+.theme-switcher {
+    position: fixed; left: 20px; bottom: 20px; z-index: 999;
+    display: flex; gap: 10px; background: rgba(255,255,255,0.1);
+    padding: 10px; border-radius: 50px; backdrop-filter: blur(10px);
+}
+.dot { width: 20px; height: 20px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; }
+.dot.cyan { background: #00d4ff; }
+.dot.gold { background: #ffcc00; }
+
+/* Classe que será aplicada via JS */
+body.theme-gold { --primary: #ffcc00; --primary-dim: rgba(255, 204, 0, 0.3); }
