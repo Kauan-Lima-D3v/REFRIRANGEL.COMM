@@ -19,7 +19,7 @@
         body { background-color: var(--blue-deep); color: #fff; overflow-x: hidden; line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
 
-        /* --- LOADER COM REVELAÇÃO BICOLOR --- */
+        /* --- LOADER COM REVELAÇÃO BICOLOR (MANTIDO PARA IMPACTO) --- */
         #loader {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #000; z-index: 10000; display: flex; align-items: center; justify-content: center;
@@ -35,16 +35,38 @@
         }
         @keyframes fill-text { 0% { width: 0%; } 100% { width: 100%; } }
 
-        /* --- HERO --- */
+        /* --- HERO SECTION (TEXTOS AGORA 100% BRANCOS) --- */
         .hero { min-height: 80vh; display: flex; align-items: center; background: radial-gradient(circle at 15% 50%, #02203c 0%, #000 100%); padding: 100px 0; }
-        .hero-tagline { color: var(--cyan); letter-spacing: 10px; font-weight: 900; display: block; margin-bottom: 25px; font-size: 0.85rem; }
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.1;
-            text-transform: uppercase; margin-bottom: 35px;
-            background: linear-gradient(to bottom, #fff 50%, var(--cyan) 50%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        
+        .hero-tagline { 
+            color: #fff; /* Removido o azul */
+            letter-spacing: 10px; 
+            font-weight: 900; 
+            display: block; 
+            margin-bottom: 25px; 
+            font-size: 0.85rem;
+            opacity: 0.8;
         }
-        .hero-description { color: var(--text-gray); max-width: 600px; font-size: 1.3rem; margin-bottom: 45px; font-weight: 300; }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5.5rem); 
+            font-weight: 900; 
+            line-height: 1.1;
+            text-transform: uppercase; 
+            margin-bottom: 35px;
+            color: #ffffff; /* Removido o gradiente azul */
+            -webkit-text-fill-color: initial; /* Garante que o texto fique branco */
+            background: none;
+        }
+
+        .hero-description { 
+            color: #fff; /* Texto mais claro e sem azul */
+            max-width: 600px; 
+            font-size: 1.3rem; 
+            margin-bottom: 45px; 
+            font-weight: 300;
+            opacity: 0.7;
+        }
 
         /* --- SEÇÃO DE COMENTÁRIOS (6 CARDS) --- */
         .reviews-section { padding: 120px 0; background: var(--dark-bg); }
@@ -66,25 +88,20 @@
         .review-card p { color: #ddd; font-style: italic; margin-bottom: 25px; font-size: 1.05rem; line-height: 1.8; }
         .review-card strong { display: block; color: #fff; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #222; padding-top: 15px; }
 
-        /* --- RODAPÉ PROFISSIONAL --- */
+        /* --- RODAPÉ --- */
         footer { background: #000; padding: 100px 0 40px 0; border-top: 1px solid #111; color: var(--text-gray); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
-        
         .footer-brand h2 { color: #fff; font-weight: 900; font-size: 1.8rem; margin-bottom: 25px; letter-spacing: 2px; }
         .footer-brand span { color: var(--cyan); }
-        .footer-brand p { max-width: 400px; font-size: 1rem; line-height: 1.7; }
-        
         .footer-nav h3, .footer-contact h3 { color: #fff; font-size: 0.9rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 3px; }
         .footer-nav ul { list-style: none; }
         .footer-nav li { margin-bottom: 15px; }
         .footer-nav a { color: var(--text-gray); text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
         .footer-nav a:hover { color: var(--cyan); }
-
         .footer-contact p { margin-bottom: 18px; font-size: 0.95rem; }
-        
         .copyright { text-align: center; padding-top: 40px; border-top: 1px solid #111; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* BOTÃO WHATSAPP */
+        /* WHATSAPP */
         .whatsapp-float { 
             position: fixed; bottom: 40px; right: 40px; background: #25d366; 
             width: 65px; height: 65px; border-radius: 50%; display: flex; 
@@ -95,7 +112,6 @@
 
         @media (max-width: 900px) {
             .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
@@ -114,8 +130,8 @@
             <div class="container">
                 <span class="hero-tagline">QUALIDADE INDUSTRIAL EM INOX</span>
                 <h1>A Força do Aço,<br>O Poder do Frio.</h1>
-                <p class="hero-description">Excelência em balcões, vitrines e câmaras frias projetadas para durar décadas.</p>
-                <a href="#" style="background:var(--cyan); color:#000; padding:22px 50px; text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:2px; font-size:0.9rem;">Catálogo 2026</a>
+                <p class="hero-description">Excelência em balcões, vitrines e câmaras frias projetadas para durar décadas com tecnologia de ponta.</p>
+                <a href="#" style="background:var(--cyan); color:#000; padding:22px 50px; text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:2px; font-size:0.9rem;">Ver Catálogo</a>
             </div>
         </section>
 
@@ -171,40 +187,34 @@
                     <h2>REFRI<span>RANGEL</span></h2>
                     <p>Especialistas em refrigeração industrial. Projetamos e fabricamos equipamentos em aço inox para alta performance gastronômica.</p>
                 </div>
-
                 <div class="footer-nav">
                     <h3>Empresa</h3>
                     <ul>
                         <li><a href="#">Equipamentos</a></li>
                         <li><a href="#">Nossa Fábrica</a></li>
-                        <li><a href="#">Catálogo PDF</a></li>
                         <li><a href="#">Orçamentos</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-contact">
-                    <h3>Contato Direto</h3>
+                    <h3>Contato</h3>
                     <p>📍 Salto/SP - Distrito Industrial</p>
                     <p>📞 (11) 4028-2982</p>
-                    <p>✉️ comercial@refrirangel.com.br</p>
                 </div>
             </div>
-
             <div class="copyright">
-                <p>© 2026 REFRI RANGEL - TECNOLOGIA EM FRIO. SALTO/SP - BRASIL</p>
+                <p>© 2026 REFRI RANGEL - SALTO/SP - BRASIL</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Lógica de fechamento do Loader
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             setTimeout(() => {
                 loader.style.opacity = '0';
                 loader.style.transition = '0.8s ease-in-out';
                 setTimeout(() => loader.style.display = 'none', 800);
-            }, 2500); // Dá tempo para a animação do texto terminar
+            }, 2500);
         });
     </script>
 </body>
