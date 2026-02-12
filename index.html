@@ -18,101 +18,115 @@
         body { background-color: #011628; color: #fff; overflow-x: hidden; transition: background-color 0.8s ease; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- LOADER CINEMATOGRÁFICO --- */
+        /* --- LOADER CINEMATOGRÁFICO BICOLOR --- */
         #loader {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #000; z-index: 10000; display: flex; flex-direction: column;
             align-items: center; justify-content: center;
         }
         .logo-load {
-            font-weight: 900; font-size: 3rem; letter-spacing: -2px;
-            background: linear-gradient(90deg, #000, #fff, #000);
-            background-size: 80%; -webkit-background-clip: text;
-            -webkit-text-fill-color: rgba(255, 255, 255, 0.1);
-            animation: shine-logo 2s linear infinite;
+            font-weight: 900; font-size: 3.5rem; letter-spacing: 8px; /* Mais espaçado */
+            background: linear-gradient(to bottom, #fff 50%, var(--cyan) 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            animation: pulse-load 2s ease-in-out infinite;
         }
-        @keyframes shine-logo { 0% { background-position: -500%; } 100% { background-position: 500%; } }
-        .progress-bar { width: 200px; height: 2px; background: rgba(255,255,255,0.1); margin-top: 20px; }
+        @keyframes pulse-load { 0%, 100% { opacity: 0.8; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+        
+        .progress-bar { width: 250px; height: 3px; background: rgba(255,255,255,0.05); margin-top: 30px; border-radius: 10px; overflow: hidden; }
         .progress-fill { width: 0%; height: 100%; background: var(--cyan); animation: loading-bar 1.8s forwards; }
         @keyframes loading-bar { to { width: 100%; } }
 
         /* --- HEADER --- */
-        header { padding: 20px 0; position: absolute; width: 100%; z-index: 100; }
+        header { padding: 30px 0; position: absolute; width: 100%; z-index: 100; }
         nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 900; font-size: 1.5rem; }
+        .logo { font-weight: 900; font-size: 1.6rem; letter-spacing: 2px; }
         .logo span { color: var(--cyan); }
-        .nav-links a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: 700; }
-        .btn-nav { background: var(--cyan); color: #000 !important; padding: 10px 20px; border-radius: 5px; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+        .btn-nav { background: var(--cyan); color: #000 !important; padding: 12px 25px; border-radius: 5px; }
 
         /* --- HERO IMPACTANTE --- */
         .hero {
             min-height: 100vh; display: flex; align-items: center;
             background: radial-gradient(circle at 50% 50%, #021a33 0%, #000 100%);
             position: relative;
-            padding-bottom: 100px; /* Mais espaço antes da produção */
+            padding-bottom: 150px;
         }
         
         /* TÍTULO METADE BRANCO METADE AZUL */
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 1.1;
+            font-size: clamp(2.8rem, 9vw, 5.5rem); font-weight: 900; line-height: 1.1;
             text-transform: uppercase; 
             background: linear-gradient(to bottom, #fff 50%, var(--cyan) 50%);
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent;
-            margin-bottom: 40px; /* Aumentado o espaçamento */
+            margin-bottom: 50px; /* Espaço aumentado */
+            letter-spacing: -1px;
+        }
+
+        .hero-tagline {
+            color: var(--cyan); 
+            letter-spacing: 10px; /* Muito mais espaçado conforme pedido */
+            font-weight: 900; 
+            display: block; 
+            margin-bottom: 35px; 
+            font-size: 1rem;
+            text-transform: uppercase;
         }
 
         .hero-description {
-            color:#888; 
-            max-width: 600px; 
-            font-size: 1.3rem; 
-            line-height: 1.8; /* Mais espaçado */
-            margin-bottom: 30px;
+            color:#aaa; 
+            max-width: 650px; 
+            font-size: 1.4rem; 
+            line-height: 2; /* Frases mais espaçadas verticalmente */
+            margin-bottom: 50px;
+            font-weight: 400;
         }
 
-        .hero-actions { display: flex; gap: 20px; margin-top: 40px; }
-        .btn-main { padding: 20px 40px; background: var(--cyan); color: #000; font-weight: 900; text-decoration: none; border-radius: 5px; }
+        .hero-actions { display: flex; gap: 30px; margin-top: 20px; align-items: center; }
+        .btn-main { padding: 22px 45px; background: var(--cyan); color: #000; font-weight: 900; text-decoration: none; border-radius: 5px; text-transform: uppercase; transition: 0.3s; }
+        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,242,255,0.3); }
 
-        /* --- BANNERS PRODUÇÃO --- */
-        .section-padding { padding: 120px 0; }
-        
-        /* Título da seção também com o efeito de duas cores */
+        /* --- SEÇÃO PRODUÇÃO --- */
+        .section-padding { padding: 140px 0; }
         .section-title {
             text-align:center; 
-            font-size: 3rem; 
-            margin-bottom: 60px;
+            font-size: 3.5rem; 
+            margin-bottom: 80px;
             background: linear-gradient(to bottom, #fff 50%, var(--cyan) 50%);
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent;
             font-weight: 900;
+            text-transform: uppercase;
         }
 
-        .production-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
+        .production-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .banner-item {
-            position: relative; height: 450px; border-radius: 20px; overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
+            position: relative; height: 500px; border-radius: 25px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
         }
-        .img-layer img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); transition: 0.6s; }
-        .banner-item:hover img { filter: brightness(0.7); transform: scale(1.1); }
-        .banner-content { position: absolute; bottom: 0; padding: 40px; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.9)); }
+        .img-layer img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); transition: 0.8s; }
+        .banner-item:hover img { filter: brightness(0.8); transform: scale(1.05); }
+        .banner-content { position: absolute; bottom: 0; padding: 45px; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.95)); }
+        .banner-content h4 { font-size: 1.8rem; margin-bottom: 10px; }
 
-        /* --- SEDE & GPS --- */
-        .sede-premium { display: flex; flex-wrap: wrap; background: #0a0a0a; border-radius: 30px; overflow: hidden; margin-top: 80px; border: 1px solid #111; }
+        /* --- SEDE --- */
+        .sede-premium { display: flex; flex-wrap: wrap; background: #080808; border-radius: 40px; overflow: hidden; margin-top: 100px; border: 1px solid #151515; }
         .btn-gps-vivo {
-            display: inline-flex; align-items: center; gap: 10px; padding: 18px 30px;
+            display: inline-flex; align-items: center; gap: 12px; padding: 20px 35px;
             background: var(--cyan); color: #000; text-decoration: none; font-weight: 900;
-            border-radius: 10px; margin-top: 20px; animation: pulse 2s infinite;
+            border-radius: 12px; margin-top: 30px; animation: pulse 2s infinite; text-transform: uppercase;
         }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0,242,255,0.7); } 70% { box-shadow: 0 0 0 15px rgba(0,242,255,0); } }
-        .sede-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; border-top: 1px solid #222; padding-top: 20px; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0,242,255,0.6); } 70% { box-shadow: 0 0 0 20px rgba(0,242,255,0); } }
 
-        /* --- COMENTÁRIOS --- */
-        .testimonials { padding: 100px 0; overflow: hidden; background: #000; }
-        .track { display: flex; gap: 30px; animation: scroll 30s linear infinite; width: max-content; }
-        .card-test { min-width: 300px; background: #111; padding: 30px; border-radius: 15px; border: 1px solid #222; }
+        /* --- TESTEMUNHOS --- */
+        .testimonials { padding: 120px 0; background: #000; }
+        .track { display: flex; gap: 40px; animation: scroll 40s linear infinite; width: max-content; }
+        .card-test { min-width: 350px; background: #0a0a0a; padding: 40px; border-radius: 20px; border: 1px solid #111; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; }
+        .whatsapp-float { position: fixed; bottom: 40px; right: 40px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body>
@@ -123,7 +137,7 @@
     </div>
 
     <a href="https://wa.me/551140282982" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WhatsApp">
     </a>
 
     <header>
@@ -139,12 +153,15 @@
     <main>
         <section class="hero">
             <div class="container">
-                <span style="color:var(--cyan); letter-spacing: 5px; font-weight: 900; display: block; margin-bottom: 20px;">16 ANOS DE QUALIDADE</span>
+                <span class="hero-tagline">16 ANOS DE QUALIDADE</span>
+                
                 <h1>A Força do Aço,<br>O Poder do Frio.</h1>
-                <p class="hero-description">Equipamentos industriais em Inox 304 com tecnologia de ponta para o seu negócio.</p>
+                
+                <p class="hero-description">Equipamentos industriais em Inox 304 fabricados com a mais alta precisão tecnológica para elevar o nível do seu negócio.</p>
+                
                 <div class="hero-actions">
-                    <a href="produtos.html" class="btn-main">Ver Catálogo</a>
-                    <a href="#producao" style="color:#fff; text-decoration:none; margin-top:15px; display:block; font-weight: 700;">↓ Ver Produção</a>
+                    <a href="produtos.html" class="btn-main">Ver Catálogo Completo</a>
+                    <a href="#producao" style="color:#fff; text-decoration:none; font-weight: 700; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase;">↓ Ver Produção</a>
                 </div>
             </div>
         </section>
@@ -154,55 +171,51 @@
             <div class="production-gallery">
                 <div class="banner-item">
                     <div class="img-layer"><img src="img09 (17).jpeg"></div>
-                    <div class="banner-content"><h4>Corte a Laser</h4><p>Precisão absoluta no Inox.</p></div>
+                    <div class="banner-content"><h4>Corte a Laser</h4><p>Acabamento milimétrico em chapas de Inox.</p></div>
                 </div>
                 <div class="banner-item">
                     <div class="img-layer"><img src="img09 (16).jpeg"></div>
-                    <div class="banner-content"><h4>Isolamento</h4><p>Poliuretano de alta densidade.</p></div>
+                    <div class="banner-content"><h4>Isolamento</h4><p>Poliuretano injetado de alta densidade.</p></div>
                 </div>
                 <div class="banner-item">
                     <div class="img-layer"><img src="img09 (11).jpeg"></div>
-                    <div class="banner-content"><h4>Qualidade</h4><p>Testes térmicos rigorosos.</p></div>
+                    <div class="banner-content"><h4>Qualidade</h4><p>Rigorosos testes de performance térmica.</p></div>
                 </div>
             </div>
 
             <div class="sede-premium">
-                <div style="flex:1.2; min-width:350px; height:450px;"><img src="img09 (18).jpeg" style="width:100%; height:100%; object-fit:cover;"></div>
-                <div style="flex:1; padding:50px; min-width:320px;">
-                    <span style="color:var(--cyan); font-weight:900;">LOCALIZAÇÃO</span>
-                    <h3 style="font-size:2rem; margin:10px 0;">Sede Industrial Salto/SP</h3>
-                    <p style="color:#666;">Infraestrutura preparada para atender todo o Brasil.</p>
-                    <a href="https://maps.google.com" target="_blank" class="btn-gps-vivo">📍 Rastrear no GPS</a>
-                    <div class="sede-features">
-                        <div><strong>🏗️ Fábrica</strong><p style="font-size:0.8rem; color:#555;">Controle total.</p></div>
-                        <div><strong>🚚 Logística</strong><p style="font-size:0.8rem; color:#555;">Entrega ágil.</p></div>
-                    </div>
+                <div style="flex:1.2; min-width:350px; height:500px;"><img src="img09 (18).jpeg" style="width:100%; height:100%; object-fit:cover;"></div>
+                <div style="flex:1; padding:60px; min-width:320px;">
+                    <span style="color:var(--cyan); font-weight:900; letter-spacing: 3px;">LOCALIZAÇÃO</span>
+                    <h3 style="font-size:2.5rem; margin:15px 0; text-transform: uppercase;">Sede Salto/SP</h3>
+                    <p style="color:#777; font-size: 1.1rem; line-height: 1.6;">Nossa unidade fabril está estrategicamente posicionada para atender com agilidade todo o território nacional.</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-gps-vivo">📍 Abrir no Google Maps</a>
                 </div>
             </div>
         </section>
 
         <section class="testimonials">
-            <div class="container"><h2 style="margin-bottom:40px;">O que dizem nossos clientes</h2></div>
+            <div class="container"><h2 style="margin-bottom:60px; text-transform: uppercase; letter-spacing: 2px;">Confiança de quem usa</h2></div>
             <div class="track">
-                <div class="card-test"><strong>⭐ Padaria Milão</strong><p>"O balcão é um tanque, excelente!"</p></div>
-                <div class="card-test"><strong>⭐ Empório Luzia</strong><p>"Frio estável e acabamento impecável."</p></div>
-                <div class="card-test"><strong>⭐ Posto America</strong><p>"A vitrine valorizou muito meus produtos."</p></div>
-                <div class="card-test"><strong>⭐ Adega Rubin</strong><p>"Inox de alta qualidade, recomendo."</p></div>
-                <div class="card-test"><strong>⭐ Padaria Milão</strong><p>"O balcão é um tanque, excelente!"</p></div>
-                <div class="card-test"><strong>⭐ Empório Luzia</strong><p>"Frio estável e acabamento impecável."</p></div>
+                <div class="card-test"><strong>⭐ Padaria Milão</strong><p>"O balcão é um tanque de guerra, resistência nota 10."</p></div>
+                <div class="card-test"><strong>⭐ Empório Luzia</strong><p>"Estabilidade térmica que não vi em outra marca."</p></div>
+                <div class="card-test"><strong>⭐ Posto America</strong><p>"A estética do Inox valorizou muito o ambiente."</p></div>
+                <div class="card-test"><strong>⭐ Adega Rubin</strong><p>"Entrega rápida e produto impecável."</p></div>
+                <div class="card-test"><strong>⭐ Padaria Milão</strong><p>"O balcão é um tanque de guerra, resistência nota 10."</p></div>
+                <div class="card-test"><strong>⭐ Empório Luzia</strong><p>"Estabilidade térmica que não vi em outra marca."</p></div>
             </div>
         </section>
     </main>
 
-    <footer style="padding: 50px 0; text-align: center; background: #050505; border-top: 1px solid #111;">
-        <p style="color: #444;">© 2026 Refri Rangel - Salto/SP</p>
+    <footer style="padding: 60px 0; text-align: center; background: #030303; border-top: 1px solid #111;">
+        <p style="color: #444; letter-spacing: 2px; font-weight: 700;">© 2026 REFRI RANGEL - TECNOLOGIA EM REFRIGERAÇÃO</p>
     </footer>
 
     <script>
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             setTimeout(() => {
-                loader.style.transition = 'all 1s ease';
+                loader.style.transition = 'all 1s cubic-bezier(0.8, 0, 0.2, 1)';
                 loader.style.transform = 'translateY(-100%)';
                 setTimeout(() => loader.style.display = 'none', 1000);
             }, 1800);
@@ -210,8 +223,8 @@
 
         window.addEventListener('scroll', () => {
             const section = document.querySelector('#producao');
-            if(window.scrollY > section.offsetTop - 300) {
-                document.body.style.backgroundColor = "#000814";
+            if(window.scrollY > section.offsetTop - 400) {
+                document.body.style.backgroundColor = "#00050a";
             } else {
                 document.body.style.backgroundColor = "#011628";
             }
@@ -219,5 +232,3 @@
     </script>
 </body>
 </html>
-
-
