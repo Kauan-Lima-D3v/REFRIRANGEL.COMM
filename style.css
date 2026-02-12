@@ -168,3 +168,102 @@ footer { padding: 80px 0 40px; border-top: 1px solid var(--glass); }
     .grid-2 { grid-template-columns: 1fr; gap: 40px; }
     h1 { font-size: 3.5rem; }
 }
+/* Layout Geral e Cores */
+:root {
+    --bg: #050505;
+    --cyan: #00d4ff;
+    --white: #ffffff;
+    --gray: #999;
+    --transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* Nova Seção Produção - Estilo de Banners */
+.production-showcase { background: var(--bg); padding-top: 100px; }
+.section-intro { margin-bottom: 60px; text-align: center; }
+.accent { color: var(--cyan); letter-spacing: 5px; font-weight: 900; font-size: 0.7rem; display: block; margin-bottom: 10px; }
+
+.sector-banner {
+    position: relative;
+    height: 550px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.sector-img {
+    position: absolute;
+    right: 0;
+    width: 60%;
+    height: 100%;
+}
+
+.sector-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    opacity: 0.4;
+    transition: var(--transition);
+}
+
+.sector-banner:hover .sector-img img {
+    filter: grayscale(0);
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.sector-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.content-box {
+    max-width: 500px;
+}
+
+.number {
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(0, 212, 255, 0.1);
+    line-height: 1;
+    display: block;
+}
+
+.content-box h3 { font-size: 2.2rem; margin-top: -30px; margin-bottom: 20px; font-weight: 900; }
+.content-box p { color: var(--gray); margin-bottom: 30px; line-height: 1.6; }
+
+/* Botão do Banner */
+.btn-banner {
+    padding: 15px 35px;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: var(--transition);
+}
+
+.btn-banner:hover { background: var(--cyan); color: #000; box-shadow: 0 0 30px rgba(0, 212, 255, 0.3); }
+
+/* Banner Invertido */
+.sector-banner.reverse .sector-img { left: 0; right: auto; }
+.sector-banner.reverse .container { display: flex; justify-content: flex-end; }
+.sector-banner.reverse .content-box { text-align: right; }
+
+/* Localização Banner */
+.location-banner { height: 600px; margin-top: 100px; position: relative; }
+.loc-wrapper { height: 100%; width: 100%; position: relative; }
+.loc-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.3); }
+.loc-overlay { position: absolute; inset: 0; display: flex; align-items: center; }
+.loc-info { max-width: 600px; }
+.loc-info h2 { font-size: 3rem; margin: 20px 0; font-weight: 900; }
+
+@media (max-width: 768px) {
+    .sector-banner { height: auto; padding: 60px 0; }
+    .sector-img { width: 100%; opacity: 0.2; }
+    .content-box h3 { font-size: 1.8rem; }
+}
