@@ -3,106 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.gstatic.com; font-src 'self' https://fonts.gstatic.com;">
-    
-    <title>REFRI RANGEL | Engenharia Térmica de Elite</title>
-    
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Refrirangel Balcões | Excelência em Refrigeração</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-    <div id="loader">
+    <div id="preloader">
         <div class="loader-content">
-            <h1 class="logo-load">REFRI<span>RANGEL</span></h1>
-            <div class="progress-container"><div class="progress-fill"></div></div>
-            <span class="load-status">SISTEMA ATIVO _2026</span>
+            <div class="spinner"></div>
+            <h1 class="logo-loader">REFRIRANGEL</h1>
+            <p>Carregando Qualidade...</p>
         </div>
     </div>
 
     <header>
         <nav class="container">
-            <div class="logo">REFRI<span>RANGEL</span></div>
-            <div class="nav-links">
-                <a href="#home">INÍCIO</a>
-                <a href="#showroom">SHOWROOM</a>
-                <a href="https://wa.me/551140282982" class="btn-wa-top">ORÇAMENTO</a>
-            </div>
+            <div class="logo">REFRIRANGEL<span>BALCÕES</span></div>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#producao">Produção</a></li>
+                <li><a href="#contato" class="btn-contato">Solicitar Orçamento</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="reveal">
-                        <span class="tagline">HIGH-END STAINLESS STEEL</span>
-                    </div>
-                    <h1>MOLDANDO O <br><span class="outline">FUTURO DO FRIO.</span></h1>
-                    <p>Engenharia de alta performance para projetos gastronômicos e industriais de luxo.</p>
-                    <div class="hero-btns">
-                        <a href="#showroom" class="btn-primary">VER SHOWROOM</a>
-                        <a href="https://wa.me/551140282982" class="btn-secondary">CONTATO DIRETO</a>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-indicator"><span>DESCER</span><div class="line"></div></div>
-        </section>
-
-        <section class="showroom" id="showroom">
-            <div class="container">
-                <div class="section-title">
-                    <h2>SHOWROOM<span>_INOX</span></h2>
-                    <div class="filters">
-                        <button class="filter-btn active" data-cat="todos">TODOS</button>
-                        <button class="filter-btn" data-cat="balcoes">BALCÕES</button>
-                        <button class="filter-btn" data-cat="vitrines">VITRINES</button>
-                    </div>
-                </div>
-
-                <div class="grid" id="product-grid">
-                    <div class="card" data-category="balcoes">
-                        <div class="card-img">
-                            <img src="img26dona.jpeg" alt="Refri Rangel Balcão">
-                        </div>
-                        <div class="card-info">
-                            <span class="p-tag">LINHA G2</span>
-                            <h3>BALCÃO REFRIGERADO POP</h3>
-                            <p>Aço Inox Escovado • Iluminação LED Ciano • Digital</p>
-                            <a href="https://wa.me/551140282982" class="btn-card">SOLICITAR PREÇO</a>
-                        </div>
-                    </div>
-
-                    <div class="card" data-category="balcoes">
-                        <div class="card-img">
-                            <img src="img09 (1).jpeg" alt="Refri Rangel Geladeira">
-                        </div>
-                        <div class="card-info">
-                            <span class="p-tag">INDUSTRIAL</span>
-                            <h3>GELADEIRA 6 PORTAS V-MAX</h3>
-                            <p>Alta capacidade térmica • Vedação Premium • Reforçada</p>
-                            <a href="https://wa.me/551140282982" class="btn-card">SOLICITAR PREÇO</a>
-                        </div>
-                    </div>
-
-                    </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-left">
-                <div class="logo">REFRI<span>RANGEL</span></div>
-                <p>Onde a estética encontra a potência térmica.</p>
-            </div>
-            <div class="socials">
-                <a href="https://www.instagram.com/refrirangelbalcoes" target="_blank">INSTAGRAM</a>
+    <section id="inicio" class="hero">
+        <div class="hero-text" data-aos="fade-up">
+            <span class="tag">O Padrão Ouro do Inox</span>
+            <h1>Projetos que transformam o seu comércio.</h1>
+            <p>Design sofisticado e durabilidade extrema para quem não aceita menos que a perfeição.</p>
+            <div class="hero-btns">
+                <a href="#produtos" class="btn-primary">Ver Catálogo</a>
+                <a href="https://www.instagram.com/refrirangelbalcoes" target="_blank" class="btn-secondary">Instagram <i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <div class="copyright">© 2026 REFRI RANGEL - SALTO/SP</div>
+    </section>
+
+    <section id="produtos" class="galeria-container">
+        <div class="section-title" data-aos="fade-down">
+            <h2>Nosso Portfólio de Luxo</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="grid-produtos">
+            <div class="card" data-aos="zoom-in">
+                <img src="img09 (1).jpeg" alt="Produto Refrirangel">
+                <div class="overlay"><h3>Balcão Premium 01</h3></div>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <img src="img09 (2).jpeg" alt="Produto Refrirangel">
+                <div class="overlay"><h3>Expositor Inox</h3></div>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <img src="img09 (3).jpeg" alt="Produto Refrirangel">
+                <div class="overlay"><h3>Balcão Refrigerado</h3></div>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <img src="img09 (25).jpeg" alt="Produto Refrirangel">
+                <div class="overlay"><h3>Vitrine de Alta Performance</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="producao" class="producao-section">
+        <div class="container-flex">
+            <div class="img-producao" data-aos="fade-right">
+                <img src="img26dona.jpeg" alt="Nossa Produção">
+                <img src="img35dona2.jpeg" alt="Nossa Fábrica" class="img-sobreposta">
+            </div>
+            <div class="texto-producao" data-aos="fade-left">
+                <h2>A Indústria por Trás do Brilho</h2>
+                <p>Cada dobra no aço e cada sistema de refrigeração é testado sob os mais rigorosos padrões. Não vendemos apenas balcões, entregamos engenharia de ponta.</p>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-circle"></i> Aço Inox 304 Certificado</li>
+                    <li><i class="fas fa-check-circle"></i> Isolamento Térmico de Alta Densidade</li>
+                    <li><i class="fas fa-check-circle"></i> Design Sob Medida</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback">
+        <h2>O que dizem os gigantes do mercado</h2>
+        <div class="depoimentos">
+            <div class="card-feedback">
+                <div class="stars">★★★★★</div>
+                <p>"Melhor investimento para minha padaria. Acabamento impecável!"</p>
+                <span>- João Silva, Proprietário</span>
+            </div>
+            <div class="card-feedback">
+                <div class="stars">★★★★★</div>
+                <p>"O suporte e a entrega da Refrirangel são incomparáveis. Site 10/10."</p>
+                <span>- Maria Souza, Nutricionista</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">REFRIRANGEL</div>
+            <p>Siga-nos nas redes sociais para ver projetos diários.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/refrirangelbalcoes" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Refrirangel Balcões - Todos os direitos reservados.
+        </div>
     </footer>
 
+    <a href="https://wa.me/SEUNUMEROAQUI" class="float-btn whats" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
