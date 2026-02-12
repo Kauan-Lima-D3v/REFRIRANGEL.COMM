@@ -3,108 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REFRI RANGEL | Thermal Engineering</title>
+    <title>REFRI RANGEL | Engenharia Térmica de Alta Performance</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
-<body class="theme-cyan">
-
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+<body>
 
     <div id="loader">
-        <div class="loader-wrapper">
-            <div class="logo-load">REFRI<span>RANGEL</span></div>
-            <div class="load-line-container">
-                <div class="load-line"></div>
-            </div>
-            <p class="load-text">INITIALIZING_THERMAL_SYSTEMS...</p>
+        <div class="loader-content">
+            <h1 class="logo-load">REFRI<span>RANGEL</span></h1>
+            <div class="shimmer-bar"></div>
+            <p>SISTEMAS TÉRMICOS 2026_V1</p>
         </div>
     </div>
 
-    <header id="main-header">
+    <header id="header">
         <nav class="container">
-            <div class="logo magnetic" data-strength="20">R<span>R</span></div>
+            <div class="logo">REFRI<span>RANGEL</span></div>
             <div class="nav-links">
-                <a href="#producao" class="nav-item">ENGINEERING</a>
-                <a href="produtos.html" class="nav-item">SHOWROOM</a>
-                <a href="https://wa.me/551140282982" class="btn-cta magnetic" data-strength="30">START_PROJECT</a>
+                <a href="#engenharia">ENGENHARIA</a>
+                <a href="produtos.html" class="active">SHOWROOM</a>
+                <a href="https://wa.me/551140282982" class="btn-budget">ORÇAMENTO</a>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-glow"></div>
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <span class="tag-top">HIGH_PERFORMANCE_UNITS</span>
-                    <h1 class="reveal-text">PURE<br><span class="outline">COLD</span><br>ENERGY.</h1>
-                    <p class="hero-subtext">Engenharia térmica em aço inox 304 para ambientes de tolerância zero.</p>
-                    <div class="hero-actions">
-                        <a href="produtos.html" class="btn-primary-neon magnetic" data-strength="40">EXPLORE_TECH</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="visual-card magnetic" data-strength="50">
-                        <div class="card-header">STABILITY_CHECK</div>
-                        <div class="temp-display">-04.5°C</div>
-                        <div class="wave-container">
-                            <div class="wave"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="producao" class="eng-section">
+            <div class="hero-bg-text">RR_2026</div>
             <div class="container">
-                <h2 class="section-label">PRODUCTION_LAB_2026</h2>
-                
-                <div class="eng-banner">
-                    <div class="eng-info">
-                        <span class="num">01</span>
-                        <h3>PRECISION_CUT</h3>
-                        <p>Fibra óptica de alta potência para cortes micrométricos em chapas de aço.</p>
-                    </div>
-                    <div class="eng-img-wrapper">
-                        <img src="img09 (17).jpeg" alt="Laser" class="parallax-img">
-                    </div>
-                </div>
-
-                <div class="eng-banner reverse">
-                    <div class="eng-info">
-                        <span class="num">02</span>
-                        <h3>THERMO_CORE</h3>
-                        <p>Injeção de poliuretano de alta densidade sob pressão controlada.</p>
-                    </div>
-                    <div class="eng-img-wrapper">
-                        <img src="img09 (16).jpeg" alt="Core" class="parallax-img">
+                <div class="hero-content">
+                    <span class="tag">SOLUÇÕES EM AÇO INOX</span>
+                    <h1>PRECISÃO QUE <br><span class="outline">CONGELA O TEMPO.</span></h1>
+                    <p>Projetos sob medida com tecnologia Thermo-Lock e acabamento cirúrgico para indústrias e gastronomia de luxo.</p>
+                    <div class="hero-btns">
+                        <a href="produtos.html" class="btn-main">CONHECER LINHA</a>
+                        <a href="#engenharia" class="btn-sec">TECNOLOGIA</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="hq-footer">
-            <div class="container hq-wrap">
-                <div class="hq-box magnetic" data-strength="20">
-                    <span class="tag">LOCATION</span>
-                    <h4>SALTO_SP / BR</h4>
-                </div>
-                <div class="hq-box magnetic" data-strength="20">
-                    <span class="tag">SOCIAL</span>
-                    <div class="social-links">
-                        <a href="#">INSTA</a>
-                        <a href="#">WAPP</a>
-                    </div>
+        <section id="showroom" class="container">
+            <div class="section-title">
+                <h2>SHOWROOM_<span>2026</span></h2>
+                <div class="filters">
+                    <button class="filter-btn active" data-cat="todos">TODOS</button>
+                    <button class="filter-btn" data-cat="balcoes">BALCÕES</button>
+                    <button class="filter-btn" data-cat="vitrines">VITRINES</button>
+                    <button class="filter-btn" data-cat="caixas">CAIXAS</button>
                 </div>
             </div>
+
+            <div class="product-grid" id="grid">
+                <div class="product-card loading" data-category="balcoes">
+                    <div class="img-box">
+                        <img src="img26dona.jpeg" alt="Balcão Inox" onload="this.parentElement.parentElement.classList.remove('loading')">
+                        <div class="overlay"><span>VER DETALHES</span></div>
+                    </div>
+                    <div class="p-details">
+                        <h3>BALCÃO REFRIGERADO POP</h3>
+                        <p>Linha Industrial - Inox 430</p>
+                        <a href="https://wa.me/551140282982" class="btn-p">SOLICITAR PREÇO</a>
+                    </div>
+                </div>
+                
+                <div class="product-card loading" data-category="balcoes">
+                    <div class="img-box">
+                        <img src="img09 (1).jpeg" alt="Geladeira" onload="this.parentElement.parentElement.classList.remove('loading')">
+                    </div>
+                    <div class="p-details">
+                        <h3>GELADEIRA 6 PORTAS</h3>
+                        <p>Máxima Capacidade Térmica</p>
+                        <a href="https://wa.me/551140282982" class="btn-p">SOLICITAR PREÇO</a>
+                    </div>
+                </div>
+
+                </div>
         </section>
     </main>
+
+    <footer>
+        <div class="container foot-content">
+            <p>© 2026 REFRI RANGEL - ENGENHARIA DO FRIO</p>
+            <div class="socials">
+                <a href="#">INSTAGRAM</a>
+                <a href="#">WHATSAPP</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
