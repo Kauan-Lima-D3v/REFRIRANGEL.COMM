@@ -87,4 +87,40 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Loader Cinematográfico
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 800);
+        }, 1500);
+    });
+
+    // 2. Animação de Entrada dos Banners (Scroll Reveal)
+    const observerOptions = { threshold: 0.2 };
+    
+    const revealOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+    // Seleciona os banners para animar
+    document.querySelectorAll('.sector-banner, .loc-info').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(50px)";
+        el.style.transition = "all 1s cubic-bezier(0.2, 1, 0.3, 1)";
+        revealOnScroll.observe(el);
+    });
+
+    // 3. Efeito do Header ao rolar
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+});
 
