@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+]<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REFRI RANGEL | Engenharia Térmica</title>
+    <title>REFRI RANGEL | High-End Thermal Engineering</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
@@ -12,80 +12,95 @@
     <div id="loader">
         <div class="loader-content">
             <h1 class="logo-load">REFRI<span>RANGEL</span></h1>
-            <div class="shimmer-bar"></div>
-            <p>SISTEMAS TÉRMICOS 2026_V1</p>
+            <div class="progress-container"><div class="progress-fill"></div></div>
+            <span class="load-status">LOADING SYSTEM_2026</span>
         </div>
     </div>
 
-    <header id="header">
+    <header>
         <nav class="container">
             <div class="logo">REFRI<span>RANGEL</span></div>
             <div class="nav-links">
-                <a href="#hero">INÍCIO</a>
-                <a href="#showroom" class="active">SHOWROOM</a>
-                <a href="https://wa.me/551140282982" class="btn-budget">WHATSAPP</a>
+                <a href="#home">INÍCIO</a>
+                <a href="#showroom">SHOWROOM</a>
+                <a href="https://wa.me/551140282982" class="btn-wa-top">WHATSAPP</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero" id="hero">
-            <div class="hero-bg-text">RR_2026</div>
-            <div class="container">
+        <section class="hero" id="home">
+            <div class="hero-video-bg"></div> <div class="container">
                 <div class="hero-content">
-                    <span class="tag">SOLUÇÕES EM AÇO INOX</span>
-                    <h1>PRECISÃO QUE <br><span class="outline">CONGELA O TEMPO.</span></h1>
-                    <p>Projetos sob medida com tecnologia Thermo-Lock e acabamento cirúrgico.</p>
+                    <div class="reveal">
+                        <span class="tagline">TECNOLOGIA EM AÇO INOXIDÁVEL</span>
+                    </div>
+                    <h1>MOLDANDO O <br><span class="outline">FUTURO DO FRIO.</span></h1>
+                    <p>Engenharia térmica de alta precisão para quem não aceita o comum.</p>
                     <div class="hero-btns">
-                        <a href="#showroom" class="btn-main">CONHECER LINHA</a>
+                        <a href="#showroom" class="btn-primary">EXPLORAR CATÁLOGO</a>
+                        <a href="https://wa.me/551140282982" class="btn-secondary">PROJETOS SOB MEDIDA</a>
                     </div>
                 </div>
             </div>
+            <div class="scroll-indicator"><span>SCROLL</span><div class="line"></div></div>
         </section>
 
-        <section id="showroom" class="container">
-            <div class="section-title">
-                <h2>SHOWROOM_<span>2026</span></h2>
-                <div class="filters">
-                    <button class="filter-btn active" data-cat="todos">TODOS</button>
-                    <button class="filter-btn" data-cat="balcoes">BALCÕES</button>
-                    <button class="filter-btn" data-cat="vitrines">VITRINES</button>
+        <section class="showroom" id="showroom">
+            <div class="container">
+                <div class="section-title">
+                    <h2>CATÁLOGO<span>_2026</span></h2>
+                    <div class="filters">
+                        <button class="filter-btn active" data-cat="todos">ALL</button>
+                        <button class="filter-btn" data-cat="balcoes">BALCÕES</button>
+                        <button class="filter-btn" data-cat="vitrines">VITRINES</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="product-grid" id="grid">
-                <div class="product-card loading" data-category="balcoes">
-                    <div class="img-box">
-                        <img src="img26dona.jpeg" alt="Balcão Inox" onload="this.parentElement.parentElement.classList.remove('loading')">
+                <div class="grid" id="product-grid">
+                    <div class="card" data-category="balcoes">
+                        <div class="card-img">
+                            <img src="img26dona.jpeg" alt="Refri Rangel Balcão">
+                            <div class="card-overlay">
+                                <span>VER DETALHES</span>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="p-tag">INDUSTRIAL</span>
+                            <h3>BALCÃO REFRIGERADO G2</h3>
+                            <p>Aço Inox Escovado • LED Interno • Controle Digital</p>
+                            <a href="https://wa.me/551140282982" class="btn-card">SOLICITAR ORÇAMENTO</a>
+                        </div>
                     </div>
-                    <div class="p-details">
-                        <h3>BALCÃO REFRIGERADO POP</h3>
-                        <p>Linha Industrial - Inox 430</p>
-                        <a href="https://wa.me/551140282982" class="btn-p">SOLICITAR PREÇO</a>
+
+                    <div class="card" data-category="balcoes">
+                        <div class="card-img">
+                            <img src="img09 (1).jpeg" alt="Refri Rangel Geladeira">
+                        </div>
+                        <div class="card-info">
+                            <span class="p-tag">ELITE</span>
+                            <h3>GELADEIRA 6 PORTAS V-MAX</h3>
+                            <p>Isolamento de Alta Densidade • Portas com Retorno</p>
+                            <a href="https://wa.me/551140282982" class="btn-card">SOLICITAR ORÇAMENTO</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="product-card loading" data-category="balcoes">
-                    <div class="img-box">
-                        <img src="img09 (1).jpeg" alt="Geladeira" onload="this.parentElement.parentElement.classList.remove('loading')">
+                    
                     </div>
-                    <div class="p-details">
-                        <h3>GELADEIRA 6 PORTAS</h3>
-                        <p>Máxima Capacidade Térmica</p>
-                        <a href="https://wa.me/551140282982" class="btn-p">SOLICITAR PREÇO</a>
-                    </div>
-                </div>
-            </div> </section>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="container foot-content">
-            <p>© 2026 REFRI RANGEL - ENGENHARIA DO FRIO</p>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="logo">REFRI<span>RANGEL</span></div>
+                <p>Onde a estética encontra a potência térmica.</p>
+            </div>
             <div class="socials">
-                <a href="#">INSTAGRAM</a>
-                <a href="https://wa.me/551140282982">WHATSAPP</a>
+                <a href="https://www.instagram.com/refrirangelbalcoes">INSTAGRAM</a>
             </div>
         </div>
+        <div class="copyright">© 2026 REFRI RANGEL - SALTO/SP</div>
     </footer>
 
     <script src="script.js"></script>
