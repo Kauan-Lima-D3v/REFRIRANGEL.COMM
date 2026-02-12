@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refri Rangel | 16 Anos de Excelência</title>
+    <title>Refri Rangel | 16 Anos de Excelência ! </title> 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --cyan: #00f2ff;
+            --cyan: #00f2ff; 
             --blue: #0066ff;
             --dark: #050505;
             --card-bg: #111111;
@@ -49,18 +49,44 @@
             min-height: 100vh; display: flex; align-items: center;
             background: radial-gradient(circle at 50% 50%, #021a33 0%, #000 100%);
             position: relative;
+            padding-bottom: 100px; /* Mais espaço antes da produção */
         }
+        
+        /* TÍTULO METADE BRANCO METADE AZUL */
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 0.9;
-            text-transform: uppercase; background: linear-gradient(to bottom, #fff 50%, #666 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 1.1;
+            text-transform: uppercase; 
+            background: linear-gradient(to bottom, #fff 50%, var(--cyan) 50%);
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px; /* Aumentado o espaçamento */
         }
-        .hero-actions { display: flex; gap: 20px; margin-top: 30px; }
+
+        .hero-description {
+            color:#888; 
+            max-width: 600px; 
+            font-size: 1.3rem; 
+            line-height: 1.8; /* Mais espaçado */
+            margin-bottom: 30px;
+        }
+
+        .hero-actions { display: flex; gap: 20px; margin-top: 40px; }
         .btn-main { padding: 20px 40px; background: var(--cyan); color: #000; font-weight: 900; text-decoration: none; border-radius: 5px; }
 
         /* --- BANNERS PRODUÇÃO --- */
-        .section-padding { padding: 100px 0; }
+        .section-padding { padding: 120px 0; }
+        
+        /* Título da seção também com o efeito de duas cores */
+        .section-title {
+            text-align:center; 
+            font-size: 3rem; 
+            margin-bottom: 60px;
+            background: linear-gradient(to bottom, #fff 50%, var(--cyan) 50%);
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
         .production-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
         .banner-item {
             position: relative; height: 450px; border-radius: 20px; overflow: hidden;
@@ -71,7 +97,7 @@
         .banner-content { position: absolute; bottom: 0; padding: 40px; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.9)); }
 
         /* --- SEDE & GPS --- */
-        .sede-premium { display: flex; flex-wrap: wrap; background: #0a0a0a; border-radius: 30px; overflow: hidden; margin-top: 50px; border: 1px solid #111; }
+        .sede-premium { display: flex; flex-wrap: wrap; background: #0a0a0a; border-radius: 30px; overflow: hidden; margin-top: 80px; border: 1px solid #111; }
         .btn-gps-vivo {
             display: inline-flex; align-items: center; gap: 10px; padding: 18px 30px;
             background: var(--cyan); color: #000; text-decoration: none; font-weight: 900;
@@ -81,7 +107,7 @@
         .sede-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; border-top: 1px solid #222; padding-top: 20px; }
 
         /* --- COMENTÁRIOS --- */
-        .testimonials { padding: 80px 0; overflow: hidden; background: #000; }
+        .testimonials { padding: 100px 0; overflow: hidden; background: #000; }
         .track { display: flex; gap: 30px; animation: scroll 30s linear infinite; width: max-content; }
         .card-test { min-width: 300px; background: #111; padding: 30px; border-radius: 15px; border: 1px solid #222; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -113,18 +139,18 @@
     <main>
         <section class="hero">
             <div class="container">
-                <span style="color:var(--cyan); letter-spacing: 5px; font-weight: 900;">16 ANOS DE QUALIDADE</span>
+                <span style="color:var(--cyan); letter-spacing: 5px; font-weight: 900; display: block; margin-bottom: 20px;">16 ANOS DE QUALIDADE</span>
                 <h1>A Força do Aço,<br>O Poder do Frio.</h1>
-                <p style="color:#888; max-width: 600px; font-size: 1.2rem;">Equipamentos industriais em Inox 304 com tecnologia de ponta.</p>
+                <p class="hero-description">Equipamentos industriais em Inox 304 com tecnologia de ponta para o seu negócio.</p>
                 <div class="hero-actions">
                     <a href="produtos.html" class="btn-main">Ver Catálogo</a>
-                    <a href="#producao" style="color:#fff; text-decoration:none; margin-top:15px; display:block;">↓ Ver Produção</a>
+                    <a href="#producao" style="color:#fff; text-decoration:none; margin-top:15px; display:block; font-weight: 700;">↓ Ver Produção</a>
                 </div>
             </div>
         </section>
 
         <section id="producao" class="container section-padding">
-            <h2 style="text-align:center; font-size: 2.5rem;">Nosso Processo Industrial</h2>
+            <h2 class="section-title">Nosso Processo Industrial</h2>
             <div class="production-gallery">
                 <div class="banner-item">
                     <div class="img-layer"><img src="img09 (17).jpeg"></div>
@@ -193,7 +219,5 @@
     </script>
 </body>
 </html>
-</html>
-
 
 
