@@ -48,3 +48,43 @@ function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
     document.body.style.overflow = 'auto';
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader');
+    const header = document.getElementById('main-header');
+
+    // 1. Controle do Loader (1.5 segundos de impacto)
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.style.transform = 'translateY(-100%)';
+            document.body.style.overflow = 'auto';
+        }, 1800);
+    });
+
+    // 2. Mudança no Header ao rolar
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // 3. Revelação de elementos ao rolar (Scroll Reveal Simples)
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.section-padding, .prod-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.8s ease-out';
+        observer.observe(el);
+    });
+});
+
