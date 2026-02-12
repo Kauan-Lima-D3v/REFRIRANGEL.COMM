@@ -5,127 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REFRI RANGEL | Thermal Engineering</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="theme-cyan">
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
     <div id="loader">
-        <div class="scan-line"></div>
-        <div class="loader-content">
-            <h2 class="glitch" data-text="REFRI RANGEL">REFRI RANGEL</h2>
-            <p>SISTEMAS TÉRMICOS DE ALTA PERFORMANCE</p>
-            <div class="load-status">
-                <div class="status-bar"></div>
+        <div class="loader-wrapper">
+            <div class="logo-load">REFRI<span>RANGEL</span></div>
+            <div class="load-line-container">
+                <div class="load-line"></div>
             </div>
+            <p class="load-text">INITIALIZING_THERMAL_SYSTEMS...</p>
         </div>
     </div>
 
     <header id="main-header">
         <nav class="container">
-            <div class="logo">R<span>R</span></div>
+            <div class="logo magnetic" data-strength="20">R<span>R</span></div>
             <div class="nav-links">
                 <a href="#producao" class="nav-item">ENGINEERING</a>
-                <a href="#depoimentos" class="nav-item">PARTNERS</a>
                 <a href="produtos.html" class="nav-item">SHOWROOM</a>
-                <a href="https://wa.me/551140282982" class="btn-cta">ORÇAMENTO_SISTEMA</a>
+                <a href="https://wa.me/551140282982" class="btn-cta magnetic" data-strength="30">START_PROJECT</a>
             </div>
         </nav>
     </header>
 
-<main>
-    <section class="hero-surreal small">
-        <div class="container hero-wrapper">
-            <div class="hero-left">
-                <span class="line-tag">HIGH_END_STAINLESS</span>
-                <h1>ENGINEERED<br><span class="outline">STEEL.</span></h1>
-                <div class="hero-meta">
-                    <div class="hero-btns">
-                        <a href="produtos.html" class="btn-main-neon">SHOWROOM_2026</a>
+    <main>
+        <section class="hero">
+            <div class="hero-glow"></div>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="tag-top">HIGH_PERFORMANCE_UNITS</span>
+                    <h1 class="reveal-text">PURE<br><span class="outline">COLD</span><br>ENERGY.</h1>
+                    <p class="hero-subtext">Engenharia térmica em aço inox 304 para ambientes de tolerância zero.</p>
+                    <div class="hero-actions">
+                        <a href="produtos.html" class="btn-primary-neon magnetic" data-strength="40">EXPLORE_TECH</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-card magnetic" data-strength="50">
+                        <div class="card-header">STABILITY_CHECK</div>
+                        <div class="temp-display">-04.5°C</div>
+                        <div class="wave-container">
+                            <div class="wave"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="hero-right-visual">
-                <div class="floating-box">
-                    <div class="box-content">
-                        <span>UNIT_STABILITY</span>
-                        <div class="temp-read"> 100%</div>
+        </section>
+
+        <section id="producao" class="eng-section">
+            <div class="container">
+                <h2 class="section-label">PRODUCTION_LAB_2026</h2>
+                
+                <div class="eng-banner">
+                    <div class="eng-info">
+                        <span class="num">01</span>
+                        <h3>PRECISION_CUT</h3>
+                        <p>Fibra óptica de alta potência para cortes micrométricos em chapas de aço.</p>
+                    </div>
+                    <div class="eng-img-wrapper">
+                        <img src="img09 (17).jpeg" alt="Laser" class="parallax-img">
+                    </div>
+                </div>
+
+                <div class="eng-banner reverse">
+                    <div class="eng-info">
+                        <span class="num">02</span>
+                        <h3>THERMO_CORE</h3>
+                        <p>Injeção de poliuretano de alta densidade sob pressão controlada.</p>
+                    </div>
+                    <div class="eng-img-wrapper">
+                        <img src="img09 (16).jpeg" alt="Core" class="parallax-img">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="producao" class="tech-section slim">
-        <div class="section-header container">
-            <h2 class="giant-title">SYSTEMS_<span>LAB</span></h2>
-        </div>
-
-        <div class="tech-banner slim-banner">
-            <div class="banner-inner container">
-                <div class="tech-info">
-                    <span class="step">01_PRECISION</span>
-                    <h3>FIBER_LASER</h3>
-                    <a href="https://wa.me/551140282982" class="btn-tech">SCAN_TECH</a>
+        <section class="hq-footer">
+            <div class="container hq-wrap">
+                <div class="hq-box magnetic" data-strength="20">
+                    <span class="tag">LOCATION</span>
+                    <h4>SALTO_SP / BR</h4>
                 </div>
-                <div class="tech-visual">
-                    <img src="img09 (17).jpeg" alt="Corte Laser">
+                <div class="hq-box magnetic" data-strength="20">
+                    <span class="tag">SOCIAL</span>
+                    <div class="social-links">
+                        <a href="#">INSTA</a>
+                        <a href="#">WAPP</a>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="tech-banner slim-banner reverse">
-            <div class="banner-inner container">
-                <div class="tech-info">
-                    <span class="step">02_CORE</span>
-                    <h3>THERMO_LOCK</h3>
-                    <a href="https://wa.me/551140282982" class="btn-tech">VIEW_STRESS_TEST</a>
-                </div>
-                <div class="tech-visual">
-                    <img src="img09 (16).jpeg" alt="Isolamento">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="hq-section-compact">
-        <div class="container hq-mini-grid">
-            <div class="hq-image-box">
-                <img src="img09 (18).jpeg" alt="Sede">
-            </div>
-            <div class="hq-text">
-                <span class="tag">PLANT_LOCATION</span>
-                <h2>SALTO_SP / BR</h2>
-                <a href="https://goo.gl/maps/seu-link" target="_blank" class="btn-map">OPEN_MAPS</a>
-            </div>
-        </div>
-    </section>
-</main>
+        </section>
     </main>
 
-    <footer class="footer-dark">
-        <div class="container footer-content">
-            <div class="footer-left">
-                <div class="logo">R<span>R</span></div>
-                <p>© 2026 REFRI RANGEL S.A.</p>
-            </div>
-            <div class="footer-right">
-                <div class="footer-links">
-                    <a href="#">INSTAGRAM</a>
-                    <a href="#">WHATSAPP</a>
-                    <a href="#">LINKEDIN</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script src="script.js"></script>
-    <div class="theme-switcher">
-    <div class="dot cyan" onclick="document.body.classList.remove('theme-gold')"></div>
-    <div class="dot gold" onclick="document.body.classList.add('theme-gold')"></div>
-</div>
 </body>
 </html>
-
 
 
 
