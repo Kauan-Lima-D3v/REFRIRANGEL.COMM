@@ -1,66 +1,43 @@
-// 1. LOADER COM PROTEÇÃO
-window.addEventListener('load', () => {
+// Aguarda o carregamento total
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // LOADER
     const loader = document.getElementById('loader');
     if (loader) {
-        setTimeout(() => {
-            loader.style.opacity = '0';
-            setTimeout(() => { loader.style.display = 'none'; }, 500);
-        }, 1500);
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loader.style.transition = 'opacity 0.5s';
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 800);
+        });
     }
-});
 
-// 2. FILTROS
-function filterProducts(category) {
-    const cards = document.querySelectorAll('.product-card');
+    // FILTROS (Refatorado para ser 100% seguro)
     const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
 
     buttons.forEach(btn => {
-        btn.classList.remove('active');
-        if(btn.innerText.toLowerCase() === category.toLowerCase()) {
-            btn.classList.add('active');
-        }
+        btn.onclick = function() {
+            const category = this.getAttribute('data-cat');
+
+            // Toggle active class
+            buttons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Mostrar/Esconder Cards
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'todos' || cardCat === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        };
     });
+});
 
-    cards.forEach(card => {
-        if (category === 'todos' || card.getAttribute('data-category') === category) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
-
-// 3. PESQUISA COM PROTEÇÃO
-const searchInput = document.getElementById('productSearch');
-if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
-        const cards = document.querySelectorAll('.product-card');
-        cards.forEach(card => {
-            const text = card.innerText.toLowerCase();
-            card.style.display = text.includes(term) ? 'block' : 'none';
-        });
-    });
-}
-
-// 4. LIGHTBOX
-function openLightbox(imgSrc) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    if (lightbox && lightboxImg) {
-        lightboxImg.src = imgSrc;
-        lightbox.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox) {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-}
 
 
 
